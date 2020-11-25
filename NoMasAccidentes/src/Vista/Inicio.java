@@ -5,6 +5,7 @@
  */
 package Vista;
 
+import Controlador.Controlador;
 /**
  *
  * @author Geovanni
@@ -109,8 +110,9 @@ public class Inicio extends javax.swing.JFrame {
     }//GEN-LAST:event_itemMenuSalirInicioActionPerformed
 
     private void itemMenuProfesionalesInicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemMenuProfesionalesInicioActionPerformed
-        MantenedorProfesionales mantenedorProfesionales = new MantenedorProfesionales();
-        mantenedorProfesionales.setVisible(true);
+        MantenedorProfesionales m = new MantenedorProfesionales();
+        Controlador c = new Controlador(m);
+        m.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_itemMenuProfesionalesInicioActionPerformed
 
