@@ -27,6 +27,9 @@ public class MantenedorClientes extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tablaClientes = new javax.swing.JTable();
+        btnListarClientes = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         menuArchivoMantenedorClientes = new javax.swing.JMenu();
         itemMenuInicioMantenedorClientes = new javax.swing.JMenuItem();
@@ -36,6 +39,19 @@ public class MantenedorClientes extends javax.swing.JFrame {
         itemMenuClientesMantenedorClientes = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Clientes");
+
+        tablaClientes.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(tablaClientes);
+
+        btnListarClientes.setText("Listar");
 
         menuArchivoMantenedorClientes.setText("Archivo");
 
@@ -79,11 +95,23 @@ public class MantenedorClientes extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1500, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(69, 69, 69)
+                .addComponent(btnListarClientes)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 166, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 774, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 748, Short.MAX_VALUE)
+                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnListarClientes)
+                .addGap(78, 78, 78))
         );
 
         pack();
@@ -142,12 +170,15 @@ public class MantenedorClientes extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnListarClientes;
     private javax.swing.JMenuItem itemMenuClientesMantenedorClientes;
     private javax.swing.JMenuItem itemMenuInicioMantenedorClientes;
     private javax.swing.JMenuItem itemMenuProfesionalesMantenedorClientes;
     private javax.swing.JMenuItem itemMenuSalirMantenedorClientes;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JMenu menuArchivoMantenedorClientes;
     private javax.swing.JMenu menuMantenedoresMantenedorClientes;
+    private javax.swing.JTable tablaClientes;
     // End of variables declaration//GEN-END:variables
 }

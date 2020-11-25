@@ -19,6 +19,7 @@ public class ProfesionalDAO {
     ResultSet rs;
 //    Profesional p = new Profesional();
     
+    //Metodo para listar
     public List listar(){
         List<Profesional>datos= new ArrayList<>();
         try {
@@ -40,6 +41,24 @@ public class ProfesionalDAO {
         } catch (Exception e) {
         }
         return datos;
+    }
+    
+    public int agregar(Profesional p){
+        String sql= "INSERT INTO PROFESIONAL(RUT,NOMBRE,APELLIDOPATERNO,APELLIDOMATERNO,DIRECCION,TELEFONO,ESTADO) VALUES(?,?,?,?,?,?,?)";
+        try {
+            con= conectar.getConnection();
+            ps= con.prepareStatement(sql);
+            ps.setString(1, p.getRut());
+            ps.setString(2, p.getNombre());
+            ps.setString(3, p.getApellidoPaterno());
+            ps.setString(4, p.getApellidoMaterno());
+            ps.setString(5, p.getDireccion());
+            ps.setInt(6, p.getTelefono());
+            ps.setInt(7, p.getEstado());
+            ps.executeUpdate();
+        } catch (Exception e) {
+        }
+        return 1;
     }
 }
 

@@ -7,6 +7,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import Vista.MantenedorProfesionales;
 import java.util.List;
+import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
@@ -22,9 +23,11 @@ public class Controlador implements ActionListener{
     MantenedorProfesionales mantendorProfesional = new MantenedorProfesionales();
     DefaultTableModel modelo= new DefaultTableModel();
     
-    public Controlador(MantenedorProfesionales i){
-        this.mantendorProfesional=i;
+    //Constructor clase controlador
+    public Controlador(MantenedorProfesionales m){
+        this.mantendorProfesional=m;
         this.mantendorProfesional.btnListar.addActionListener(this);
+        this.mantendorProfesional.btnGuardarProfesional.addActionListener(this);
     }
             
     @Override
@@ -32,8 +35,36 @@ public class Controlador implements ActionListener{
         if (e.getSource()==mantendorProfesional.btnListar) {
             listar(mantendorProfesional.tablaListaProfesionales);
         }
+        if (e.getSource()==mantendorProfesional.btnGuardarProfesional) {
+            agregar();
+        }
     }
     
+    //Metodo Agregar
+    public void agregar(){
+        String rut= mantendorProfesional.txtRutProfesional.getText();
+        String nombre= mantendorProfesional.txtNombreProfesional.getText();
+        String apellidoP= mantendorProfesional.txtApellidoPaternoProfesional.getText();
+        String apellidoM= mantendorProfesional.txtApellidoMaternoProfesional.getText();
+        String direccion= mantendorProfesional.txtDireccionProfesional.getText();
+        int telefono= Integer.parseInt( mantendorProfesional.txtTelefonoProfesional.getText());
+        int estado= Integer.parseInt( mantendorProfesional.txtEstadoProfesional.getText());
+        p.setRut(rut);
+        p.setNombre(nombre);
+        p.setApellidoPaterno(apellidoP);
+        p.setApellidoMaterno(apellidoM);
+        p.setDireccion(direccion);
+        p.setTelefono(telefono);
+        p.setEstado(estado);
+        int r=pDao.agregar(p);
+        if (r==1) {
+            JOptionPane.showMessageDialog(mantendorProfesional, "Profesional agregado con exito.");
+        }else{
+            JOptionPane.showMessageDialog(mantendorProfesional, "Error al agregar Profesional");
+        }
+    } 
+    
+    //Metodo Listar
     public void listar(JTable tabla){
         modelo= (DefaultTableModel) tabla.getModel();
         tabla.setModel(modelo);
@@ -52,5 +83,7 @@ public class Controlador implements ActionListener{
         }
         mantendorProfesional.tablaListaProfesionales.setModel(modelo);
     }
+    
+    
     
 }
