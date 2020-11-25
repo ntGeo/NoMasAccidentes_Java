@@ -2,9 +2,10 @@ package Controlador;
 
 import Modelo.DAO.ProfesionalDAO;
 import Modelo.Profesional;
+import Vista.Inicio;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import Vista.Inicio;
+import Vista.MantenedorProfesionales;
 import java.util.List;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
@@ -17,18 +18,19 @@ public class Controlador implements ActionListener{
 
     ProfesionalDAO pDao= new ProfesionalDAO();
     Profesional p = new Profesional();
-    Inicio vista = new Inicio();
+    Inicio inicio = new Inicio();
+    MantenedorProfesionales mantendorProfesional = new MantenedorProfesionales();
     DefaultTableModel modelo= new DefaultTableModel();
     
-    public Controlador(Inicio i){
-        this.vista=i;
-        this.vista.btnListar.addActionListener(this);
+    public Controlador(MantenedorProfesionales i){
+        this.mantendorProfesional=i;
+        this.mantendorProfesional.btnListar.addActionListener(this);
     }
             
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource()==vista.btnListar) {
-            listar(vista.tablaListaProfesionales);
+        if (e.getSource()==mantendorProfesional.btnListar) {
+            listar(mantendorProfesional.tablaListaProfesionales);
         }
     }
     
@@ -48,7 +50,7 @@ public class Controlador implements ActionListener{
             object[7]=lista.get(i).getEstado();
             modelo.addRow(object);
         }
-//        vista.tablaListaProfesionales.setModel(modelo);
+        mantendorProfesional.tablaListaProfesionales.setModel(modelo);
     }
     
 }

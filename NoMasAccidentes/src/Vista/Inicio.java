@@ -1,6 +1,9 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package Vista;
-
-import Controlador.Controlador;
 
 /**
  *
@@ -24,100 +27,142 @@ public class Inicio extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        btnListar = new javax.swing.JButton();
-        jPanel2 = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        tablaListaProfesionales = new javax.swing.JTable();
+        panelInicio = new javax.swing.JPanel();
+        menuBarInicio = new javax.swing.JMenuBar();
+        MenuArchivoInicio = new javax.swing.JMenu();
+        itemMenuInicioInicio = new javax.swing.JMenuItem();
+        itemMenuSalirInicio = new javax.swing.JMenuItem();
+        menuMantenedoresInicio = new javax.swing.JMenu();
+        itemMenuProfesionalesInicio = new javax.swing.JMenuItem();
+        itemMenuClientesInicio = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Inicio");
 
-        btnListar.setText("Listar");
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addComponent(btnListar)
-                .addContainerGap(19, Short.MAX_VALUE))
+        javax.swing.GroupLayout panelInicioLayout = new javax.swing.GroupLayout(panelInicio);
+        panelInicio.setLayout(panelInicioLayout);
+        panelInicioLayout.setHorizontalGroup(
+            panelInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1500, Short.MAX_VALUE)
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnListar)
-                .addGap(50, 50, 50))
+        panelInicioLayout.setVerticalGroup(
+            panelInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 774, Short.MAX_VALUE)
         );
 
-        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Lista de Profesionales"));
+        MenuArchivoInicio.setText("Archivo");
 
-        tablaListaProfesionales.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
+        itemMenuInicioInicio.setText("Inicio");
+        itemMenuInicioInicio.setEnabled(false);
+        MenuArchivoInicio.add(itemMenuInicioInicio);
 
-            },
-            new String [] {
-                "ID", "Rut", "Nombre", "Apellido P", "Apellido M", "Direccion", "Telefono", "Estado"
+        itemMenuSalirInicio.setText("Salir");
+        itemMenuSalirInicio.setToolTipText("");
+        itemMenuSalirInicio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itemMenuSalirInicioActionPerformed(evt);
             }
-        ));
-        jScrollPane1.setViewportView(tablaListaProfesionales);
+        });
+        MenuArchivoInicio.add(itemMenuSalirInicio);
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 756, Short.MAX_VALUE))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1)
-                .addContainerGap())
-        );
+        menuBarInicio.add(MenuArchivoInicio);
+
+        menuMantenedoresInicio.setText("Mantenedores");
+
+        itemMenuProfesionalesInicio.setText("Profesionales");
+        itemMenuProfesionalesInicio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itemMenuProfesionalesInicioActionPerformed(evt);
+            }
+        });
+        menuMantenedoresInicio.add(itemMenuProfesionalesInicio);
+
+        itemMenuClientesInicio.setText("Clientes");
+        itemMenuClientesInicio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itemMenuClientesInicioActionPerformed(evt);
+            }
+        });
+        menuMantenedoresInicio.add(itemMenuClientesInicio);
+
+        menuBarInicio.add(menuMantenedoresInicio);
+
+        setJMenuBar(menuBarInicio);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(panelInicio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+            .addComponent(panelInicio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void itemMenuSalirInicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemMenuSalirInicioActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_itemMenuSalirInicioActionPerformed
+
+    private void itemMenuProfesionalesInicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemMenuProfesionalesInicioActionPerformed
+        MantenedorProfesionales mantenedorProfesionales = new MantenedorProfesionales();
+        mantenedorProfesionales.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_itemMenuProfesionalesInicioActionPerformed
+
+    private void itemMenuClientesInicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemMenuClientesInicioActionPerformed
+        MantenedorClientes mantenedorClientes = new MantenedorClientes();
+        mantenedorClientes.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_itemMenuClientesInicioActionPerformed
 
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        Inicio i=new Inicio();
-        Controlador c = new Controlador(i);
-        i.setVisible(true);
-        i.setLocationRelativeTo(i);
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(Inicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(Inicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(Inicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(Inicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new Inicio().setVisible(true);
+            }
+        });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JButton btnListar;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JScrollPane jScrollPane1;
-    public javax.swing.JTable tablaListaProfesionales;
+    private javax.swing.JMenu MenuArchivoInicio;
+    private javax.swing.JMenuItem itemMenuClientesInicio;
+    private javax.swing.JMenuItem itemMenuInicioInicio;
+    private javax.swing.JMenuItem itemMenuProfesionalesInicio;
+    private javax.swing.JMenuItem itemMenuSalirInicio;
+    private javax.swing.JMenuBar menuBarInicio;
+    private javax.swing.JMenu menuMantenedoresInicio;
+    private javax.swing.JPanel panelInicio;
     // End of variables declaration//GEN-END:variables
 }
