@@ -24,7 +24,7 @@ public class ProfesionalDAO {
         List<Profesional>datos= new ArrayList<>();
         try {
             con=conectar.getConnection();
-            ps=con.prepareStatement("SELECT * FROM PROFESIONAL");
+            ps=con.prepareStatement("SELECT * FROM GEOATAVALES.PROFESIONAL");
             rs=ps.executeQuery();
             while (rs.next()) {
                 Profesional p = new Profesional();
@@ -44,7 +44,8 @@ public class ProfesionalDAO {
     }
     
     public int agregar(Profesional p){
-        String sql= "INSERT INTO PROFESIONAL(RUT,NOMBRE,APELLIDOPATERNO,APELLIDOMATERNO,DIRECCION,TELEFONO,ESTADO) VALUES(?,?,?,?,?,?,?)";
+        int r=0;
+        String sql= "INSERT INTO GEOATAVALES.PROFESIONAL(Rut,Nombre,Apellidopaterno,Apellidomaterno,Direccion,Telefono,Estado)VALUES(?,?,?,?,?,?,?)";
         try {
             con= conectar.getConnection();
             ps= con.prepareStatement(sql);

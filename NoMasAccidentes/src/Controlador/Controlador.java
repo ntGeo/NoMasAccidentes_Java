@@ -19,7 +19,6 @@ public class Controlador implements ActionListener{
 
     ProfesionalDAO pDao= new ProfesionalDAO();
     Profesional p = new Profesional();
-    Inicio inicio = new Inicio();
     MantenedorProfesionales mantendorProfesional = new MantenedorProfesionales();
     DefaultTableModel modelo= new DefaultTableModel();
     
@@ -33,10 +32,12 @@ public class Controlador implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource()==mantendorProfesional.btnListar) {
+            limpiarTabla();
             listar(mantendorProfesional.tablaListaProfesionales);
         }
         if (e.getSource()==mantendorProfesional.btnGuardarProfesional) {
             agregar();
+            limpiarCamposProfesional();
         }
     }
     
@@ -84,6 +85,22 @@ public class Controlador implements ActionListener{
         mantendorProfesional.tablaListaProfesionales.setModel(modelo);
     }
     
+    //Metodo para limpiar campos
+    void limpiarCamposProfesional(){
+        mantendorProfesional.txtRutProfesional.setText("");
+        mantendorProfesional.txtNombreProfesional.setText("");
+        mantendorProfesional.txtApellidoPaternoProfesional.setText("");
+        mantendorProfesional.txtApellidoMaternoProfesional.setText("");
+        mantendorProfesional.txtDireccionProfesional.setText("");
+        mantendorProfesional.txtTelefonoProfesional.setText("");
+        mantendorProfesional.txtEstadoProfesional.setText("");
+    }
     
-    
+    //Metodo para refrescar tabla
+    void limpiarTabla(){
+        for (int i = 0; i < mantendorProfesional.tablaListaProfesionales.getRowCount(); i++) {
+            modelo.removeRow(i);
+            i= i-1;
+        }
+    }
 }
