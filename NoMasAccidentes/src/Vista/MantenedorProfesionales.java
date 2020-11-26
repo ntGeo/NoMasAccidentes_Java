@@ -1,6 +1,6 @@
 package Vista;
 
-import Controlador.Controlador;
+import Controlador.ControladorProfesional;
 
 /**
  *
@@ -299,7 +299,7 @@ public class MantenedorProfesionales extends javax.swing.JFrame {
         
         //Metodo que trabaja controlador
         MantenedorProfesionales m=new MantenedorProfesionales();
-        Controlador c = new Controlador(m);
+        ControladorProfesional c = new ControladorProfesional(m);
         m.setVisible(true);
 //        m.setLocationRelativeTo(m);
     }

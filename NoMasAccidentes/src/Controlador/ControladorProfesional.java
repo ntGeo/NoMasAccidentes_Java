@@ -15,7 +15,7 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author Geovanni
  */
-public class Controlador implements ActionListener{
+public class ControladorProfesional implements ActionListener{
 
     ProfesionalDAO pDao= new ProfesionalDAO();
     Profesional p = new Profesional();
@@ -23,7 +23,7 @@ public class Controlador implements ActionListener{
     DefaultTableModel modelo= new DefaultTableModel();
     
     //Constructor clase controlador de elementos de vista mantenedor profesionales
-    public Controlador(MantenedorProfesionales m){
+    public ControladorProfesional(MantenedorProfesionales m){
         this.mantendorProfesional=m;
         this.mantendorProfesional.btnListar.addActionListener(this);
         this.mantendorProfesional.btnGuardarProfesional.addActionListener(this);
