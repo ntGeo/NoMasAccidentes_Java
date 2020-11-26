@@ -27,6 +27,8 @@ public class Controlador implements ActionListener{
         this.mantendorProfesional=m;
         this.mantendorProfesional.btnListar.addActionListener(this);
         this.mantendorProfesional.btnGuardarProfesional.addActionListener(this);
+        this.mantendorProfesional.btnEditarProfesional.addActionListener(this);
+        this.mantendorProfesional.btnActualizarProfesional.addActionListener(this);
     }
             
     @Override
@@ -38,6 +40,61 @@ public class Controlador implements ActionListener{
         if (e.getSource()==mantendorProfesional.btnGuardarProfesional) {
             agregar();
             limpiarCamposProfesional();
+            limpiarTabla();
+            listar(mantendorProfesional.tablaListaProfesionales);
+        }
+        if (e.getSource()==mantendorProfesional.btnEditarProfesional) {
+            int fila= mantendorProfesional.tablaListaProfesionales.getSelectedRow();
+            if (fila==-1) {
+                JOptionPane.showMessageDialog(mantendorProfesional,"Debe seleccionar una fila");
+            }else {
+                int id= Integer.parseInt((String)mantendorProfesional.tablaListaProfesionales.getValueAt(fila, 0).toString());
+                String rut= (String)mantendorProfesional.tablaListaProfesionales.getValueAt(fila, 1);
+                String nombre= (String)mantendorProfesional.tablaListaProfesionales.getValueAt(fila, 2);
+                String apellidoP= (String)mantendorProfesional.tablaListaProfesionales.getValueAt(fila, 3);
+                String apellidoM= (String)mantendorProfesional.tablaListaProfesionales.getValueAt(fila, 4);
+                String direccion= (String)mantendorProfesional.tablaListaProfesionales.getValueAt(fila, 5);
+                int telefono= Integer.parseInt((String)mantendorProfesional.tablaListaProfesionales.getValueAt(fila, 6).toString());
+                int estado= Integer.parseInt((String)mantendorProfesional.tablaListaProfesionales.getValueAt(fila, 7).toString());
+                mantendorProfesional.txtID.setText(""+id);
+                mantendorProfesional.txtRutProfesional.setText(rut);
+                mantendorProfesional.txtNombreProfesional.setText(nombre);
+                mantendorProfesional.txtApellidoPaternoProfesional.setText(apellidoP);
+                mantendorProfesional.txtApellidoMaternoProfesional.setText(apellidoM);
+                mantendorProfesional.txtDireccionProfesional.setText(direccion);
+                mantendorProfesional.txtTelefonoProfesional.setText(""+telefono);
+                mantendorProfesional.txtEstadoProfesional.setText(""+estado);
+            }
+        }
+        if (e.getSource()==mantendorProfesional.btnActualizarProfesional) {
+            actualizar();
+            limpiarTabla();
+            listar(mantendorProfesional.tablaListaProfesionales);
+        }
+    }
+    
+    public void actualizar(){
+        int id=Integer.parseInt(mantendorProfesional.txtID.getText());
+        String rut= mantendorProfesional.txtRutProfesional.getText();
+        String nombre= mantendorProfesional.txtNombreProfesional.getText();
+        String apellidoP= mantendorProfesional.txtApellidoPaternoProfesional.getText();
+        String apellidoM= mantendorProfesional.txtApellidoMaternoProfesional.getText();
+        String direccion= mantendorProfesional.txtDireccionProfesional.getText();
+        int telefono= Integer.parseInt( mantendorProfesional.txtTelefonoProfesional.getText());
+        int estado= Integer.parseInt( mantendorProfesional.txtEstadoProfesional.getText());
+        p.setId(id);
+        p.setRut(rut);
+        p.setNombre(nombre);
+        p.setApellidoPaterno(apellidoP);
+        p.setApellidoMaterno(apellidoM);
+        p.setDireccion(direccion);
+        p.setTelefono(telefono);
+        p.setEstado(estado);
+        int r=pDao.actualizar(p);
+        if (r==1) {
+            JOptionPane.showMessageDialog(mantendorProfesional, "Profesional ha sido actualizado");
+        }else{
+            JOptionPane.showMessageDialog(mantendorProfesional, "Error. Profesional no pudo ser actualizado");
         }
     }
     

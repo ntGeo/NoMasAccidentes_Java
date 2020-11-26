@@ -43,6 +43,7 @@ public class ProfesionalDAO {
         return datos;
     }
     
+    //Metodo que agrega un nurvo profesional a la base
     public int agregar(Profesional p){
         int r=0;
         String sql= "INSERT INTO GEOATAVALES.PROFESIONAL(Rut,Nombre,Apellidopaterno,Apellidomaterno,Direccion,Telefono,Estado)VALUES(?,?,?,?,?,?,?)";
@@ -60,6 +61,31 @@ public class ProfesionalDAO {
         } catch (Exception e) {
         }
         return 1;
+    }
+    
+    public int actualizar(Profesional p){
+        int r=0;
+        String sql="UPDATE GEOATAVALES.PROFESIONAL SET Rut=?, Nombre=?, Apellidopaterno=?, Apellidomaterno=?, Direccion=?, Telefono=?, Estado=? WHERE Id=?";
+        try {
+            con= conectar.getConnection();
+            ps= con.prepareStatement(sql);
+            ps.setString(1, p.getRut());
+            ps.setString(2, p.getNombre());
+            ps.setString(3, p.getApellidoPaterno());
+            ps.setString(4, p.getApellidoMaterno());
+            ps.setString(5, p.getDireccion());
+            ps.setInt(6, p.getTelefono());
+            ps.setInt(7, p.getEstado());
+            ps.setInt(8, p.getId());
+            r= ps.executeUpdate();
+            if (r==1) {
+                return 1;
+            }else{
+            return 0;
+            }
+        } catch (Exception e) {
+        }
+        return r;
     }
 }
 

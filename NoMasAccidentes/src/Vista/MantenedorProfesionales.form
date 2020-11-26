@@ -109,40 +109,51 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="lblRutProfesional" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="lblNombreProfesional" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="lblApellidoPaternoProfesional" max="32767" attributes="0"/>
-                                  <Component id="lblApellidoMaternoProfesional" pref="0" max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="lblRutProfesional" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="lblNombreProfesional" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="lblApellidoPaternoProfesional" max="32767" attributes="0"/>
+                                          <Component id="lblApellidoMaternoProfesional" pref="0" max="32767" attributes="0"/>
+                                      </Group>
+                                      <Component id="lblDireccionProfesional" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="lblTelefono" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="lblEstado" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="32767" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="txtNombreProfesional" alignment="0" min="-2" pref="250" max="-2" attributes="0"/>
+                                      <Component id="txtRutProfesional" alignment="0" min="-2" pref="120" max="-2" attributes="0"/>
+                                      <Component id="txtApellidoPaternoProfesional" min="-2" pref="250" max="-2" attributes="0"/>
+                                      <Component id="txtApellidoMaternoProfesional" min="-2" pref="250" max="-2" attributes="0"/>
+                                      <Component id="txtTelefonoProfesional" min="-2" pref="120" max="-2" attributes="0"/>
+                                      <Component id="txtEstadoProfesional" min="-2" pref="50" max="-2" attributes="0"/>
+                                      <Component id="txtDireccionProfesional" min="-2" pref="200" max="-2" attributes="0"/>
+                                  </Group>
                               </Group>
-                              <Component id="lblDireccionProfesional" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="lblTelefono" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="lblEstado" alignment="0" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="32767" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="txtNombreProfesional" alignment="0" min="-2" pref="250" max="-2" attributes="0"/>
-                              <Component id="txtRutProfesional" alignment="0" min="-2" pref="120" max="-2" attributes="0"/>
-                              <Component id="txtApellidoPaternoProfesional" min="-2" pref="250" max="-2" attributes="0"/>
-                              <Component id="txtApellidoMaternoProfesional" min="-2" pref="250" max="-2" attributes="0"/>
-                              <Component id="txtDireccionProfesional" min="-2" pref="200" max="-2" attributes="0"/>
-                              <Component id="txtTelefonoProfesional" min="-2" pref="120" max="-2" attributes="0"/>
-                              <Component id="txtEstadoProfesional" min="-2" pref="50" max="-2" attributes="0"/>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Component id="btnEditarProfesional" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              </Group>
                           </Group>
                           <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="btnGuardarProfesional" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
-                                  <Component id="btnListar" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
+                              <Group type="102" attributes="0">
                                   <Component id="lblID" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="88" max="-2" attributes="0"/>
                                   <Component id="txtID" min="-2" pref="50" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="btnGuardarProfesional" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="btnActualizarProfesional" min="-2" max="-2" attributes="0"/>
+                                      <Component id="btnListar" min="-2" max="-2" attributes="0"/>
+                                  </Group>
                               </Group>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
@@ -202,7 +213,12 @@
                       <Component id="lblEstado" min="-2" max="-2" attributes="0"/>
                       <Component id="txtEstadoProfesional" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="71" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="btnEditarProfesional" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnActualizarProfesional" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="btnListar" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="btnGuardarProfesional" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -414,6 +430,22 @@
         <Component class="java.awt.TextField" name="txtID">
           <Properties>
             <Property name="editable" type="boolean" value="false"/>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JButton" name="btnEditarProfesional">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Editar"/>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JButton" name="btnActualizarProfesional">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Actualizar"/>
           </Properties>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
