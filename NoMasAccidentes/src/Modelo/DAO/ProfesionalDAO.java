@@ -63,6 +63,7 @@ public class ProfesionalDAO {
         return 1;
     }
     
+    //Metodo para ctualizar datos de un profesional
     public int actualizar(Profesional p){
         int r=0;
         String sql="UPDATE GEOATAVALES.PROFESIONAL SET Rut=?, Nombre=?, Apellidopaterno=?, Apellidomaterno=?, Direccion=?, Telefono=?, Estado=? WHERE Id=?";
@@ -86,6 +87,16 @@ public class ProfesionalDAO {
         } catch (Exception e) {
         }
         return r;
+    }
+    
+    public void delete(int id){
+        String sql="DELETE FROM GEOATAVALES.PROFESIONAL WHERE ID="+id;
+        try {
+            con= conectar.getConnection();
+            ps= con.prepareStatement(sql);
+            ps.executeUpdate();
+        } catch (Exception e) {
+        }
     }
 }
 

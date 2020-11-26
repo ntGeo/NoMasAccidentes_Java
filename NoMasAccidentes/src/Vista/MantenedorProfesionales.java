@@ -47,6 +47,7 @@ public class MantenedorProfesionales extends javax.swing.JFrame {
         txtID = new java.awt.TextField();
         btnEditarProfesional = new javax.swing.JButton();
         btnActualizarProfesional = new javax.swing.JButton();
+        btnEliminarProfesional = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         menuArchivoMantenedorProfesionales = new javax.swing.JMenu();
         itemMenuInicioMantendorProfesional = new javax.swing.JMenuItem();
@@ -103,6 +104,8 @@ public class MantenedorProfesionales extends javax.swing.JFrame {
 
         btnActualizarProfesional.setText("Actualizar");
 
+        btnEliminarProfesional.setText("Eliminar");
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -130,9 +133,13 @@ public class MantenedorProfesionales extends javax.swing.JFrame {
                                     .addComponent(txtApellidoMaternoProfesional, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(txtTelefonoProfesional, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(txtEstadoProfesional, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtDireccionProfesional, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(btnEliminarProfesional)
+                                        .addComponent(txtDireccionProfesional, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))))
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(btnEditarProfesional)
+                                .addGap(18, 18, 18)
+                                .addComponent(btnActualizarProfesional)
                                 .addGap(0, 0, Short.MAX_VALUE)))
                         .addGap(26, 26, 26))
                     .addGroup(jPanel2Layout.createSequentialGroup()
@@ -144,9 +151,7 @@ public class MantenedorProfesionales extends javax.swing.JFrame {
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(btnGuardarProfesional)
                                 .addGap(46, 46, 46)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(btnActualizarProfesional)
-                                    .addComponent(btnListar))))
+                                .addComponent(btnListar)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1228, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -197,7 +202,8 @@ public class MantenedorProfesionales extends javax.swing.JFrame {
                 .addGap(63, 63, 63)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnListar)
-                    .addComponent(btnGuardarProfesional))
+                    .addComponent(btnGuardarProfesional)
+                    .addComponent(btnEliminarProfesional))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -301,6 +307,7 @@ public class MantenedorProfesionales extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btnActualizarProfesional;
     public javax.swing.JButton btnEditarProfesional;
+    public javax.swing.JButton btnEliminarProfesional;
     public javax.swing.JButton btnGuardarProfesional;
     public javax.swing.JButton btnListar;
     private javax.swing.JMenuItem itemMenuClientesMantendorProfesionales;

@@ -22,15 +22,18 @@ public class Controlador implements ActionListener{
     MantenedorProfesionales mantendorProfesional = new MantenedorProfesionales();
     DefaultTableModel modelo= new DefaultTableModel();
     
-    //Constructor clase controlador
+    //Constructor clase controlador de elementos de vista mantenedor profesionales
     public Controlador(MantenedorProfesionales m){
         this.mantendorProfesional=m;
         this.mantendorProfesional.btnListar.addActionListener(this);
         this.mantendorProfesional.btnGuardarProfesional.addActionListener(this);
         this.mantendorProfesional.btnEditarProfesional.addActionListener(this);
         this.mantendorProfesional.btnActualizarProfesional.addActionListener(this);
+        this.mantendorProfesional.btnEliminarProfesional.addActionListener(this);
+        listar(mantendorProfesional.tablaListaProfesionales);
     }
-            
+        
+    //Condiciones para ejecutar un evento en pantalla
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource()==mantendorProfesional.btnListar) {
@@ -71,6 +74,22 @@ public class Controlador implements ActionListener{
             limpiarTabla();
             listar(mantendorProfesional.tablaListaProfesionales);
         }
+        if (e.getSource()==mantendorProfesional.btnEliminarProfesional) {
+            eliminar();
+            limpiarTabla();
+            listar(mantendorProfesional.tablaListaProfesionales);
+        }
+    }
+    
+    public void eliminar(){
+        int fila= mantendorProfesional.tablaListaProfesionales.getSelectedRow();
+            if (fila==-1) {
+                JOptionPane.showMessageDialog(mantendorProfesional,"Debe seleccionar un profesional");
+            }else{
+                int id= Integer.parseInt((String)mantendorProfesional.tablaListaProfesionales.getValueAt(fila, 0).toString());
+                pDao.delete(id);
+                JOptionPane.showMessageDialog(mantendorProfesional,"Profesional eliminado");
+            }
     }
     
     public void actualizar(){
