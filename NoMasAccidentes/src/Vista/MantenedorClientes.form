@@ -86,28 +86,6 @@
                       <Component id="btnEliminarCliente" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
                   </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="lblRazonSocialCliente" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="lblDireccionCliente" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="lblCorreoCliente" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="lblTelefonoCliente" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="lblEstadoCliente" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="lblGiroCliente" alignment="0" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="txtGiroCliente" min="-2" pref="200" max="-2" attributes="0"/>
-                          <Component id="txtEstadoCliente" min="-2" pref="50" max="-2" attributes="0"/>
-                          <Component id="txtTelefonoCliente" min="-2" pref="120" max="-2" attributes="0"/>
-                          <Component id="txtCorreoCliente" min="-2" pref="200" max="-2" attributes="0"/>
-                          <Component id="txtDireccionCliente" min="-2" pref="200" max="-2" attributes="0"/>
-                          <Component id="txtRutCliente" min="-2" pref="120" max="-2" attributes="0"/>
-                          <Component id="txtIDCliente" min="-2" pref="50" max="-2" attributes="0"/>
-                          <Component id="txtRazonSocialCliente" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace pref="23" max="32767" attributes="0"/>
-                  </Group>
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
@@ -124,6 +102,30 @@
                           </Group>
                       </Group>
                       <EmptySpace min="-2" pref="94" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="lblRazonSocialCliente" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblDireccionCliente" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblCorreoCliente" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblTelefonoCliente" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblEstadoCliente" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblGiroCliente" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblComuna" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="txtComunaID" min="-2" pref="50" max="-2" attributes="0"/>
+                          <Component id="txtGiroCliente" min="-2" pref="200" max="-2" attributes="0"/>
+                          <Component id="txtEstadoCliente" min="-2" pref="50" max="-2" attributes="0"/>
+                          <Component id="txtTelefonoCliente" min="-2" pref="120" max="-2" attributes="0"/>
+                          <Component id="txtCorreoCliente" min="-2" pref="200" max="-2" attributes="0"/>
+                          <Component id="txtDireccionCliente" min="-2" pref="200" max="-2" attributes="0"/>
+                          <Component id="txtRutCliente" min="-2" pref="120" max="-2" attributes="0"/>
+                          <Component id="txtIDCliente" min="-2" pref="50" max="-2" attributes="0"/>
+                          <Component id="txtRazonSocialCliente" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace pref="23" max="32767" attributes="0"/>
                   </Group>
               </Group>
               <Component id="jScrollPane1" min="-2" pref="1170" max="-2" attributes="0"/>
@@ -188,6 +190,11 @@
               <Group type="103" groupAlignment="1" attributes="0">
                   <Component id="lblGiroCliente" min="-2" max="-2" attributes="0"/>
                   <Component id="txtGiroCliente" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="lblComuna" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtComunaID" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -395,6 +402,9 @@
       </AuxValues>
     </Component>
     <Component class="java.awt.TextField" name="txtIDCliente">
+      <Properties>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
       </AuxValues>
@@ -430,6 +440,16 @@
       </AuxValues>
     </Component>
     <Component class="java.awt.TextField" name="txtGiroCliente">
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblComuna">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Comuna"/>
+      </Properties>
+    </Component>
+    <Component class="java.awt.TextField" name="txtComunaID">
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
       </AuxValues>

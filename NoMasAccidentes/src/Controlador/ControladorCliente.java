@@ -6,6 +6,7 @@ import Vista.MantenedorClientes;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
+import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
@@ -23,6 +24,7 @@ public class ControladorCliente implements ActionListener{
     public ControladorCliente (MantenedorClientes mc){
         this.mantenedorClientes=mc;
         this.mantenedorClientes.btnListarClientes.addActionListener(this);
+        this.mantenedorClientes.btnGuardarCliente.addActionListener(this);
         listar(mantenedorClientes.tablaListaClientes);
     }
     
@@ -31,6 +33,37 @@ public class ControladorCliente implements ActionListener{
         if(e.getSource()==mantenedorClientes.btnListarClientes) {
             limpiarTabla();
             listar(mantenedorClientes.tablaListaClientes);
+        }
+        if (e.getSource()==mantenedorClientes.btnGuardarCliente) {
+            agregar();
+            limpiarCamposCLiente();
+            limpiarTabla();
+            listar(mantenedorClientes.tablaListaClientes);
+        }
+    }
+    
+    public void agregar(){
+        String rut= mantenedorClientes.txtRutCliente.getText();
+        String razonSocial= mantenedorClientes.txtRazonSocialCliente.getText();
+        String direccion= mantenedorClientes.txtDireccionCliente.getText();
+        String email= mantenedorClientes.txtCorreoCliente.getText();
+        int telefono= Integer.parseInt(mantenedorClientes.txtTelefonoCliente.getText());
+        int estado= Integer.parseInt(mantenedorClientes.txtEstadoCliente.getText());
+        String giro= mantenedorClientes.txtGiroCliente.getText();
+        int comunaID= Integer.parseInt(mantenedorClientes.txtComunaID.getText());
+        c.setRut(rut);
+        c.setRazonSocial(razonSocial);
+        c.setDireccion(direccion);
+        c.setEmail(email);
+        c.setTelefono(telefono);
+        c.setEstado(estado);
+        c.setGiro(giro);
+        c.setComunaID(comunaID);
+        int r= cDao.agregar(c);
+        if (r==1) {
+            JOptionPane.showMessageDialog(mantenedorClientes, "Cliente agregado con exito.");
+        }else{
+            JOptionPane.showMessageDialog(mantenedorClientes, "Error al agregar Cliente.");
         }
     }
     
@@ -63,4 +96,14 @@ public class ControladorCliente implements ActionListener{
         }
     }
    
+    void limpiarCamposCLiente(){
+        mantenedorClientes.txtRutCliente.setText("");
+        mantenedorClientes.txtRazonSocialCliente.setText("");
+        mantenedorClientes.txtDireccionCliente.setText("");
+        mantenedorClientes.txtCorreoCliente.setText("");
+        mantenedorClientes.txtTelefonoCliente.setText("");
+        mantenedorClientes.txtEstadoCliente.setText("");
+        mantenedorClientes.txtGiroCliente.setText("");
+        mantenedorClientes.txtComunaID.setText("");
+    }
 }

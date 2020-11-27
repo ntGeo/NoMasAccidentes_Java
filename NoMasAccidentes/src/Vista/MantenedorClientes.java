@@ -53,6 +53,8 @@ public class MantenedorClientes extends javax.swing.JFrame {
         txtTelefonoCliente = new java.awt.TextField();
         txtEstadoCliente = new java.awt.TextField();
         txtGiroCliente = new java.awt.TextField();
+        lblComuna = new javax.swing.JLabel();
+        txtComunaID = new java.awt.TextField();
         jMenuBar1 = new javax.swing.JMenuBar();
         menuArchivoMantenedorClientes = new javax.swing.JMenu();
         itemMenuInicioMantenedorClientes = new javax.swing.JMenuItem();
@@ -104,6 +106,10 @@ public class MantenedorClientes extends javax.swing.JFrame {
         lblEstadoCliente.setText("Estado");
 
         lblGiroCliente.setText("Giro");
+
+        txtIDCliente.setEnabled(false);
+
+        lblComuna.setText("Comuna");
 
         menuArchivoMantenedorClientes.setText("Archivo");
 
@@ -158,25 +164,6 @@ public class MantenedorClientes extends javax.swing.JFrame {
                         .addComponent(btnEliminarCliente)
                         .addGap(38, 38, 38))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblRazonSocialCliente)
-                            .addComponent(lblDireccionCliente)
-                            .addComponent(lblCorreoCliente)
-                            .addComponent(lblTelefonoCliente)
-                            .addComponent(lblEstadoCliente)
-                            .addComponent(lblGiroCliente))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtGiroCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtEstadoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtTelefonoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtCorreoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtDireccionCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtRutCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtIDCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtRazonSocialCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -187,7 +174,28 @@ public class MantenedorClientes extends javax.swing.JFrame {
                                 .addComponent(btnEditarCliente)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(btnActualizarCliente)))
-                        .addGap(94, 94, 94)))
+                        .addGap(94, 94, 94))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblRazonSocialCliente)
+                            .addComponent(lblDireccionCliente)
+                            .addComponent(lblCorreoCliente)
+                            .addComponent(lblTelefonoCliente)
+                            .addComponent(lblEstadoCliente)
+                            .addComponent(lblGiroCliente)
+                            .addComponent(lblComuna))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtComunaID, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtGiroCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtEstadoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtTelefonoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtCorreoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtDireccionCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtRutCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtIDCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtRazonSocialCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)))
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1170, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -236,6 +244,10 @@ public class MantenedorClientes extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(lblGiroCliente)
                     .addComponent(txtGiroCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblComuna)
+                    .addComponent(txtComunaID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnActualizarCliente)
@@ -295,6 +307,7 @@ public class MantenedorClientes extends javax.swing.JFrame {
     private javax.swing.JMenuItem itemMenuSalirMantenedorClientes;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblComuna;
     public javax.swing.JLabel lblCorreoCliente;
     public javax.swing.JLabel lblDireccionCliente;
     public javax.swing.JLabel lblEstadoCliente;
@@ -306,6 +319,7 @@ public class MantenedorClientes extends javax.swing.JFrame {
     private javax.swing.JMenu menuArchivoMantenedorClientes;
     private javax.swing.JMenu menuMantenedoresMantenedorClientes;
     public javax.swing.JTable tablaListaClientes;
+    public java.awt.TextField txtComunaID;
     public java.awt.TextField txtCorreoCliente;
     public java.awt.TextField txtDireccionCliente;
     public java.awt.TextField txtEstadoCliente;

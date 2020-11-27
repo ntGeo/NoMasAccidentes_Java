@@ -18,7 +18,7 @@ public class ClienteDAO {
     ResultSet rs;
     Cliente c = new Cliente();
     
-    
+    //Listar Clientes
     public List listar(){
         List<Cliente>datos= new ArrayList<>();
         try {
@@ -43,6 +43,24 @@ public class ClienteDAO {
         return datos;
     }
     
+    public int agregar(Cliente c){
+        String sql="INSERT INTO NMA3.CLIENTE(Rut,RazonSocial,Direccion,Email,Telefono,Estado,Giro,Comuna_ID) VALUES(?,?,?,?,?,?,?,?)";
+        try {
+            con= conectar.getConnection();
+            ps= con.prepareStatement(sql);
+            ps.setString(1, c.getRut());
+            ps.setString(2, c.getRazonSocial());
+            ps.setString(3, c.getDireccion());
+            ps.setString(4, c.getEmail());
+            ps.setInt(5, c.getTelefono());
+            ps.setInt(6, c.getEstado());
+            ps.setString(7, c.getGiro());
+            ps.setInt(8, c.getComunaID());
+            ps.executeUpdate();
+        } catch (Exception e) {
+        }
+        return 1;
+    }
     
     
     
