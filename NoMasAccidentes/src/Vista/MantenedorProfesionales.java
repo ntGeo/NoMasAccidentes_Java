@@ -289,19 +289,12 @@ public class MantenedorProfesionales extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) { //metodo original
-//       java.awt.EventQueue.invokeLater(new Runnable(){
-//           public void run(){
-//               new Inicio().setVisible(true);
-//           }
-//       });
-        
-        
+    public static void main(String args[]) {
         //Metodo que trabaja controlador
         MantenedorProfesionales m=new MantenedorProfesionales();
         ControladorProfesional c = new ControladorProfesional(m);
         m.setVisible(true);
-//        m.setLocationRelativeTo(m);
+        m.setLocationRelativeTo(m);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

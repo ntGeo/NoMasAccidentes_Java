@@ -2,7 +2,6 @@ package Controlador;
 
 import Modelo.DAO.ProfesionalDAO;
 import Modelo.Profesional;
-import Vista.Inicio;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import Vista.MantenedorProfesionales;
@@ -23,8 +22,8 @@ public class ControladorProfesional implements ActionListener{
     DefaultTableModel modelo= new DefaultTableModel();
     
     //Constructor clase controlador de elementos de vista mantenedor profesionales
-    public ControladorProfesional(MantenedorProfesionales m){
-        this.mantendorProfesional=m;
+    public ControladorProfesional(MantenedorProfesionales mp){
+        this.mantendorProfesional=mp;
         this.mantendorProfesional.btnListar.addActionListener(this);
         this.mantendorProfesional.btnGuardarProfesional.addActionListener(this);
         this.mantendorProfesional.btnEditarProfesional.addActionListener(this);
@@ -37,13 +36,13 @@ public class ControladorProfesional implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource()==mantendorProfesional.btnListar) {
-            limpiarTabla();
+            limpiarTablaProfesioanles();
             listar(mantendorProfesional.tablaListaProfesionales);
         }
         if (e.getSource()==mantendorProfesional.btnGuardarProfesional) {
             agregar();
             limpiarCamposProfesional();
-            limpiarTabla();
+            limpiarTablaProfesioanles();
             listar(mantendorProfesional.tablaListaProfesionales);
         }
         if (e.getSource()==mantendorProfesional.btnEditarProfesional) {
@@ -71,12 +70,13 @@ public class ControladorProfesional implements ActionListener{
         }
         if (e.getSource()==mantendorProfesional.btnActualizarProfesional) {
             actualizar();
-            limpiarTabla();
+            limpiarTablaProfesioanles();
+            limpiarCamposProfesional();
             listar(mantendorProfesional.tablaListaProfesionales);
         }
         if (e.getSource()==mantendorProfesional.btnEliminarProfesional) {
             eliminar();
-            limpiarTabla();
+            limpiarTablaProfesioanles();
             listar(mantendorProfesional.tablaListaProfesionales);
         }
     }
@@ -173,7 +173,7 @@ public class ControladorProfesional implements ActionListener{
     }
     
     //Metodo para refrescar tabla
-    void limpiarTabla(){
+    void limpiarTablaProfesioanles(){
         for (int i = 0; i < mantendorProfesional.tablaListaProfesionales.getRowCount(); i++) {
             modelo.removeRow(i);
             i= i-1;

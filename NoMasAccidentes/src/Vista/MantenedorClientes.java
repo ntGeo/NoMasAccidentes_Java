@@ -5,6 +5,9 @@
  */
 package Vista;
 
+import Controlador.ControladorCliente;
+import Controlador.ControladorProfesional;
+
 /**
  *
  * @author Geovanni
@@ -28,10 +31,10 @@ public class MantenedorClientes extends javax.swing.JFrame {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        tablaClientes = new javax.swing.JTable();
+        tablaListaClientes = new javax.swing.JTable();
         btnListarClientes = new javax.swing.JButton();
         btnActualizarCliente = new javax.swing.JButton();
-        btnEditar = new javax.swing.JButton();
+        btnEditarCliente = new javax.swing.JButton();
         btnGuardarCliente = new javax.swing.JButton();
         btnEliminarCliente = new javax.swing.JButton();
         lblIDCliente = new javax.swing.JLabel();
@@ -61,21 +64,26 @@ public class MantenedorClientes extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Clientes");
 
-        tablaClientes.setModel(new javax.swing.table.DefaultTableModel(
+        tablaListaClientes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "ID", "Rut", "Razon Social", "Direccion", "Correo", "Telefono", "Estado", "Giro"
+                "ID", "Rut", "Razon Social", "Direccion", "Email", "Telefono", "Estado", "Giro", "Comuna"
             }
         ));
-        jScrollPane1.setViewportView(tablaClientes);
+        jScrollPane1.setViewportView(tablaListaClientes);
 
         btnListarClientes.setText("Listar");
+        btnListarClientes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnListarClientesActionPerformed(evt);
+            }
+        });
 
         btnActualizarCliente.setText("Actualizar");
 
-        btnEditar.setText("Editar");
+        btnEditarCliente.setText("Editar");
 
         btnGuardarCliente.setText("Guardar");
 
@@ -148,7 +156,7 @@ public class MantenedorClientes extends javax.swing.JFrame {
                         .addComponent(btnListarClientes)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnEliminarCliente)
-                        .addGap(67, 67, 67))
+                        .addGap(38, 38, 38))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblRazonSocialCliente)
@@ -167,7 +175,7 @@ public class MantenedorClientes extends javax.swing.JFrame {
                             .addComponent(txtRutCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtIDCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtRazonSocialCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
@@ -176,11 +184,11 @@ public class MantenedorClientes extends javax.swing.JFrame {
                                     .addComponent(lblRut))
                                 .addGap(0, 0, Short.MAX_VALUE))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(btnEditar)
+                                .addComponent(btnEditarCliente)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(btnActualizarCliente)))
-                        .addGap(123, 123, 123)))
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(94, 94, 94)))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1170, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -231,7 +239,7 @@ public class MantenedorClientes extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnActualizarCliente)
-                    .addComponent(btnEditar))
+                    .addComponent(btnEditarCliente))
                 .addGap(87, 87, 87)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnListarClientes)
@@ -255,49 +263,29 @@ public class MantenedorClientes extends javax.swing.JFrame {
     }//GEN-LAST:event_itemMenuInicioMantenedorClientesActionPerformed
 
     private void itemMenuProfesionalesMantenedorClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemMenuProfesionalesMantenedorClientesActionPerformed
-        MantenedorProfesionales mantenedoresProfesionales = new MantenedorProfesionales();
-        mantenedoresProfesionales.setVisible(true);
+        MantenedorProfesionales m = new MantenedorProfesionales();
+        ControladorProfesional c = new ControladorProfesional(m);
+        m.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_itemMenuProfesionalesMantenedorClientesActionPerformed
+
+    private void btnListarClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListarClientesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnListarClientesActionPerformed
 
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(MantenedorClientes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(MantenedorClientes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(MantenedorClientes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(MantenedorClientes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new MantenedorClientes().setVisible(true);
-            }
-        });
+        MantenedorClientes m=new MantenedorClientes();
+        ControladorCliente c = new ControladorCliente(m);
+        m.setVisible(true);
+        m.setLocationRelativeTo(m);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btnActualizarCliente;
-    public javax.swing.JButton btnEditar;
+    public javax.swing.JButton btnEditarCliente;
     public javax.swing.JButton btnEliminarCliente;
     public javax.swing.JButton btnGuardarCliente;
     public javax.swing.JButton btnListarClientes;
@@ -317,7 +305,7 @@ public class MantenedorClientes extends javax.swing.JFrame {
     public javax.swing.JLabel lblTelefonoCliente;
     private javax.swing.JMenu menuArchivoMantenedorClientes;
     private javax.swing.JMenu menuMantenedoresMantenedorClientes;
-    public javax.swing.JTable tablaClientes;
+    public javax.swing.JTable tablaListaClientes;
     public java.awt.TextField txtCorreoCliente;
     public java.awt.TextField txtDireccionCliente;
     public java.awt.TextField txtEstadoCliente;

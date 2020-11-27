@@ -17,14 +17,14 @@ public class ProfesionalDAO {
     Connection con;
     PreparedStatement ps;
     ResultSet rs;
-//    Profesional p = new Profesional();
+    Profesional p = new Profesional();
     
-    //Metodo para listar
+    //Metodo para listar Profesionales en Tabla
     public List listar(){
         List<Profesional>datos= new ArrayList<>();
         try {
             con=conectar.getConnection();
-            ps=con.prepareStatement("SELECT * FROM GEOATAVALES.PROFESIONAL");
+            ps=con.prepareStatement("SELECT * FROM NMA3.PROFESIONAL");
             rs=ps.executeQuery();
             while (rs.next()) {
                 Profesional p = new Profesional();
@@ -46,7 +46,7 @@ public class ProfesionalDAO {
     //Metodo que agrega un nurvo profesional a la base
     public int agregar(Profesional p){
         int r=0;
-        String sql= "INSERT INTO GEOATAVALES.PROFESIONAL(Rut,Nombre,Apellidopaterno,Apellidomaterno,Direccion,Telefono,Estado)VALUES(?,?,?,?,?,?,?)";
+        String sql= "INSERT INTO NMA3.PROFESIONAL(Rut,Nombre,Apellidopaterno,Apellidomaterno,Direccion,Telefono,Estado)VALUES(?,?,?,?,?,?,?)";
         try {
             con= conectar.getConnection();
             ps= con.prepareStatement(sql);
@@ -66,7 +66,7 @@ public class ProfesionalDAO {
     //Metodo para ctualizar datos de un profesional
     public int actualizar(Profesional p){
         int r=0;
-        String sql="UPDATE GEOATAVALES.PROFESIONAL SET Rut=?, Nombre=?, Apellidopaterno=?, Apellidomaterno=?, Direccion=?, Telefono=?, Estado=? WHERE Id=?";
+        String sql="UPDATE NMA3.PROFESIONAL SET Rut=?, Nombre=?, Apellidopaterno=?, Apellidomaterno=?, Direccion=?, Telefono=?, Estado=? WHERE Id=?";
         try {
             con= conectar.getConnection();
             ps= con.prepareStatement(sql);
@@ -90,7 +90,7 @@ public class ProfesionalDAO {
     }
     
     public void delete(int id){
-        String sql="DELETE FROM GEOATAVALES.PROFESIONAL WHERE ID="+id;
+        String sql="DELETE FROM NMA3.PROFESIONAL WHERE ID="+id;
         try {
             con= conectar.getConnection();
             ps= con.prepareStatement(sql);
