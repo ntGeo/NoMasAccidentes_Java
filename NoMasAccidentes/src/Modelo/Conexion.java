@@ -9,7 +9,7 @@ import java.sql.DriverManager;
  */
 public class Conexion {
     String url="jdbc:oracle:thin:@localhost:1521:XE";
-    String user="NMA3",pass="geo112358";    
+    String user="NMA6",pass="123";    
     Connection con;
     public Connection getConnection(){
         try {

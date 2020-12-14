@@ -24,21 +24,21 @@ public class ControladorProfesional implements ActionListener{
     //Constructor clase controlador de elementos de vista mantenedor profesionales
     public ControladorProfesional(MantenedorProfesionales mp){
         this.mantendorProfesional=mp;
-        this.mantendorProfesional.btnListar.addActionListener(this);
+//        this.mantendorProfesional.btnListar.addActionListener(this);
         this.mantendorProfesional.btnGuardarProfesional.addActionListener(this);
         this.mantendorProfesional.btnEditarProfesional.addActionListener(this);
         this.mantendorProfesional.btnActualizarProfesional.addActionListener(this);
-        this.mantendorProfesional.btnEliminarProfesional.addActionListener(this);
+//        this.mantendorProfesional.btnEliminarProfesional.addActionListener(this);
         listar(mantendorProfesional.tablaListaProfesionales);
     }
         
     //Condiciones para ejecutar un evento en pantalla
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource()==mantendorProfesional.btnListar) {
-            limpiarTablaProfesioanles();
-            listar(mantendorProfesional.tablaListaProfesionales);
-        }
+//        if (e.getSource()==mantendorProfesional.btnListar) {
+//            limpiarTablaProfesioanles();
+//            listar(mantendorProfesional.tablaListaProfesionales);
+//        }
         if (e.getSource()==mantendorProfesional.btnGuardarProfesional) {
             agregar();
             limpiarCamposProfesional();
@@ -74,11 +74,11 @@ public class ControladorProfesional implements ActionListener{
             limpiarCamposProfesional();
             listar(mantendorProfesional.tablaListaProfesionales);
         }
-        if (e.getSource()==mantendorProfesional.btnEliminarProfesional) {
-            eliminar();
-            limpiarTablaProfesioanles();
-            listar(mantendorProfesional.tablaListaProfesionales);
-        }
+//        if (e.getSource()==mantendorProfesional.btnEliminarProfesional) {
+//            eliminar();
+//            limpiarTablaProfesioanles();
+//            listar(mantendorProfesional.tablaListaProfesionales);
+//        }
     }
     
     public void eliminar(){
@@ -163,6 +163,7 @@ public class ControladorProfesional implements ActionListener{
     
     //Metodo para limpiar campos
     void limpiarCamposProfesional(){
+        mantendorProfesional.txtID.setText("");
         mantendorProfesional.txtRutProfesional.setText("");
         mantendorProfesional.txtNombreProfesional.setText("");
         mantendorProfesional.txtApellidoPaternoProfesional.setText("");
