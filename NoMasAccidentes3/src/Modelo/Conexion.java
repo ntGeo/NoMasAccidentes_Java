@@ -11,6 +11,9 @@ public class Conexion {
     String url="jdbc:oracle:thin:@localhost:1521:XE";//String de Conexion
     String user="nma6";
     String pass="123"; //Usuario base y contraseña   
+    // String Conexion Sebastian
+//    String user="SEBASTIAN";
+//    String pass="1234"; //Usuario base y contraseña   
     Connection con;
     public Connection getConnection(){
         try {
