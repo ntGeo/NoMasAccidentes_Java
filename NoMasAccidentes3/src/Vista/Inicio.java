@@ -60,6 +60,15 @@ public class Inicio extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        tablaActividades.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
+                tablaActividadesAncestorAdded(evt);
+            }
+            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+        });
         jScrollPane1.setViewportView(tablaActividades);
 
         btnIniciarActividad.setText("Iniciar Actividad");
@@ -113,11 +122,16 @@ public class Inicio extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jMenuItemSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemSalirActionPerformed
         System.exit(0);
     }//GEN-LAST:event_jMenuItemSalirActionPerformed
+
+    private void tablaActividadesAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_tablaActividadesAncestorAdded
+        ControladorInicio ci= new ControladorInicio(this);
+    }//GEN-LAST:event_tablaActividadesAncestorAdded
 
     /**
      * @param args the command line arguments
@@ -156,7 +170,6 @@ public class Inicio extends javax.swing.JFrame {
         Inicio i = new Inicio();
         ControladorInicio ca = new ControladorInicio(i);
         i.setVisible(true);
-        i.setLocationRelativeTo(i);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
