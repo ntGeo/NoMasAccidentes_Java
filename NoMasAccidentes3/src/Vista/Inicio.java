@@ -28,6 +28,7 @@ public class Inicio extends javax.swing.JFrame {
     private void initComponents() {
 
         jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tablaActividades = new javax.swing.JTable();
@@ -35,8 +36,11 @@ public class Inicio extends javax.swing.JFrame {
         jMenuBar1 = new javax.swing.JMenuBar();
         menuOpciones = new javax.swing.JMenu();
         jMenuItemSalir = new javax.swing.JMenuItem();
+        menuActividades = new javax.swing.JMenu();
 
         jMenuItem1.setText("jMenuItem1");
+
+        jMenuItem2.setText("jMenuItem2");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -108,6 +112,10 @@ public class Inicio extends javax.swing.JFrame {
 
         jMenuBar1.add(menuOpciones);
 
+        menuActividades.setText("Actividades");
+        menuActividades.setEnabled(false);
+        jMenuBar1.add(menuActividades);
+
         setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -176,9 +184,11 @@ public class Inicio extends javax.swing.JFrame {
     public javax.swing.JButton btnIniciarActividad;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
     public javax.swing.JMenuItem jMenuItemSalir;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    public javax.swing.JMenu menuActividades;
     private javax.swing.JMenu menuOpciones;
     public javax.swing.JTable tablaActividades;
     // End of variables declaration//GEN-END:variables
