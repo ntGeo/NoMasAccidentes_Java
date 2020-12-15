@@ -4,7 +4,7 @@ import Modelo.Actividad;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import Modelo.DAO.ActividadDAO;
-import Vista.IniciarActividad;
+import Vista.IniciarVisita_Checklist;
 import Vista.Inicio;
 import java.util.List;
 import javax.swing.JOptionPane;
@@ -58,14 +58,29 @@ public class ControladorInicio implements ActionListener{
     
     private void iniciarActividad(){
         int fila = inicio.tablaActividades.getSelectedRow();
+        String tipo = null;
         if (fila==-1) {
             JOptionPane.showMessageDialog(inicio,"Debe seleccionar una actividad");
-        }else{
-            JOptionPane.showMessageDialog(inicio,"Se iniciará actividad");
-            IniciarActividad ia= new IniciarActividad();
-            ia.setVisible(true);
-            this.inicio.setVisible(false);
         }
+        else{
+            tipo= inicio.tablaActividades.getValueAt(fila, 1).toString();
+            System.out.println(tipo);
+            }if ("Visita".equals(tipo)) {
+            int yn=JOptionPane.showConfirmDialog(inicio, "Ha seleccionado una Actividad de Tipo Visita, ¿Desea comenzar checklist?","Inicio de Actividad",JOptionPane.YES_NO_OPTION);
+            
+                if (yn== JOptionPane.YES_OPTION) {
+                IniciarVisita_Checklist ia= new IniciarVisita_Checklist();
+                ia.setVisible(true);
+                this.inicio.setVisible(false);      
+                }else{
+                this.inicio.setVisible(true);
+            }
+        }
+            
+        }  
+//            JOptionPane.showMessageDialog(inicio,"Se iniciará actividad");
+            
+        
     }
     
-}
+
