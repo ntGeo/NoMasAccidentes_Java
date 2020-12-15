@@ -2,6 +2,7 @@
 
 import Modelo.DAO.UsuarioDAO;
 import Modelo.Usuario;
+import Vista.Inicio;
 import Vista.Login;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -28,7 +29,6 @@ public class ControladorLogin implements ActionListener{
     public void actionPerformed(ActionEvent e) {
         if (e.getSource()== login.btnIngresar) {
             credenciales();
-            limpiarCampos();
         }
     }
     
@@ -48,10 +48,14 @@ public class ControladorLogin implements ActionListener{
         String contrasena =login.txtContrasena.toString();
         int r=usuariodao.validar(nombreUsuario, contrasena);
         
-        if (r==1) {
+        if (r==0) {
             JOptionPane.showMessageDialog(login, "Bienvenido");
-        } else{
-            JOptionPane.showMessageDialog(login, "Error. Credenciales no validas");
+            Inicio i = new Inicio();
+            i.setVisible(true);
+            this.login.setVisible(false);
+        }else{
+            JOptionPane.showMessageDialog(login, "Error al intentar ingresar");
+            limpiarCampos();
         }
         
     }

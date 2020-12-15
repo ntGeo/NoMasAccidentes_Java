@@ -19,23 +19,23 @@ public class UsuarioDAO {
     
     public int validar(String usuario, String contrasena){
         int r=0;
-        String sql="SELECT * FROM NMA6.USUARIO WHERE nombre='"+usuario+"' AND clave='"+contrasena+"'";
-        
         try {
             con= conectar.getConnection();
-            ps= con.prepareStatement(sql);
-            rs= ps.executeQuery();
-            if (rs.next()) {
-                r =1;
+            ps= con.prepareStatement("SELECT * FROM NMA6.USUARIO WHERE nombre='"+usuario+"' AND clave='"+contrasena+"'");
+//            rs= ps.executeQuery();
+            r=ps.executeUpdate();
+            
+            if (r==1) {
+                return 1;
             }else{
-                r=0;
+                return 0;
             }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Error al conectar" + e.getMessage(), e.getMessage(), JOptionPane.ERROR_MESSAGE);
         }
-
         return r;
     }
+    
 
 }
 
