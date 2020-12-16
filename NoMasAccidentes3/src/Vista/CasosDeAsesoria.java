@@ -1,20 +1,22 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package Vista;
 
-import Controlador.ControladorActividades;
-
+import Controlador.ControladorCasosASesoria;
 
 /**
  *
  * @author Geovanni
  */
-public class Actividades extends javax.swing.JFrame {
-    
-//    Actividades inicio = new Actividades();
+public class CasosDeAsesoria extends javax.swing.JFrame {
 
     /**
-     * Creates new form Inicio
+     * Creates new form CasosDeAsesoria
      */
-    public Actividades() {
+    public CasosDeAsesoria() {
         initComponents();
     }
 
@@ -27,54 +29,35 @@ public class Actividades extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tablaActividades = new javax.swing.JTable();
-        btnIniciarActividad = new javax.swing.JButton();
+        tablaCasosAsesoria = new javax.swing.JTable();
         jMenuBar1 = new javax.swing.JMenuBar();
         menuActividades = new javax.swing.JMenu();
-        menuCasosAsesoria = new javax.swing.JMenu();
-
-        jMenuItem1.setText("jMenuItem1");
-
-        jMenuItem2.setText("jMenuItem2");
+        menuCasosASesoria = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setResizable(false);
-        setSize(new java.awt.Dimension(1000, 500));
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Actividades"));
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Casos de Asesoria"));
 
-        tablaActividades.setModel(new javax.swing.table.DefaultTableModel(
+        tablaCasosAsesoria.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "ID", "Tipo", "Descripcion", "Detalle", "Fecha Inicio", "Fecha Termino", "Lugar", "Participante", "Recurso", "Estado"
+                "ID", "Responsable", "Fecha Creacion", "Fiscalizador", "Rut Fiscalizador", "Lugar de Accidente", "Fecha Accidente", "Estado"
             }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false, false, false
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        tablaActividades.addAncestorListener(new javax.swing.event.AncestorListener() {
+        ));
+        tablaCasosAsesoria.addAncestorListener(new javax.swing.event.AncestorListener() {
             public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
-                tablaActividadesAncestorAdded(evt);
+                tablaCasosAsesoriaAncestorAdded(evt);
             }
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
             }
         });
-        jScrollPane1.setViewportView(tablaActividades);
-
-        btnIniciarActividad.setText("Iniciar Actividad");
+        jScrollPane1.setViewportView(tablaCasosAsesoria);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -82,34 +65,28 @@ public class Actividades extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 968, Short.MAX_VALUE)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(btnIniciarActividad)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 968, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 364, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
-                .addComponent(btnIniciarActividad)
-                .addContainerGap())
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 337, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(105, Short.MAX_VALUE))
         );
 
         menuActividades.setText("Actividades");
-        menuActividades.setEnabled(false);
-        jMenuBar1.add(menuActividades);
-
-        menuCasosAsesoria.setText("Casos de Asesorias");
-        menuCasosAsesoria.addMouseListener(new java.awt.event.MouseAdapter() {
+        menuActividades.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                menuCasosAsesoriaMouseClicked(evt);
+                menuActividadesMouseClicked(evt);
             }
         });
-        jMenuBar1.add(menuCasosAsesoria);
+        jMenuBar1.add(menuActividades);
+
+        menuCasosASesoria.setText("Casos de Asesoria");
+        menuCasosASesoria.setEnabled(false);
+        jMenuBar1.add(menuCasosASesoria);
 
         setJMenuBar(jMenuBar1);
 
@@ -128,15 +105,15 @@ public class Actividades extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void tablaActividadesAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_tablaActividadesAncestorAdded
-        ControladorActividades ci= new ControladorActividades(this);
-    }//GEN-LAST:event_tablaActividadesAncestorAdded
+    private void tablaCasosAsesoriaAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_tablaCasosAsesoriaAncestorAdded
+        ControladorCasosASesoria cca = new ControladorCasosASesoria(this);
+    }//GEN-LAST:event_tablaCasosAsesoriaAncestorAdded
 
-    private void menuCasosAsesoriaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuCasosAsesoriaMouseClicked
-        CasosDeAsesoria cda= new CasosDeAsesoria();
-        cda.setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_menuCasosAsesoriaMouseClicked
+    private void menuActividadesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuActividadesMouseClicked
+       Actividades i = new Actividades();
+       i.setVisible(true);
+       this.setVisible(false);
+    }//GEN-LAST:event_menuActividadesMouseClicked
 
     /**
      * @param args the command line arguments
@@ -155,38 +132,34 @@ public class Actividades extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Actividades.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CasosDeAsesoria.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Actividades.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CasosDeAsesoria.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Actividades.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CasosDeAsesoria.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Actividades.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CasosDeAsesoria.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
 //        java.awt.EventQueue.invokeLater(new Runnable() {
 //            public void run() {
-//                new Actividades().setVisible(true);
+//                new CasosDeAsesoria().setVisible(true);
 //            }
 //        });
 
-        Actividades i = new Actividades();
-        ControladorActividades ca = new ControladorActividades(i);
-        i.setVisible(true);
+        CasosDeAsesoria ca= new CasosDeAsesoria();
+        ControladorCasosASesoria cca= new ControladorCasosASesoria(ca);
+        ca.setVisible(true);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JButton btnIniciarActividad;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     public javax.swing.JMenu menuActividades;
-    public javax.swing.JMenu menuCasosAsesoria;
-    public javax.swing.JTable tablaActividades;
+    public javax.swing.JMenu menuCasosASesoria;
+    public javax.swing.JTable tablaCasosAsesoria;
     // End of variables declaration//GEN-END:variables
 }

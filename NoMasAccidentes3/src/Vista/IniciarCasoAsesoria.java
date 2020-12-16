@@ -48,8 +48,8 @@ public class IniciarCasoAsesoria extends javax.swing.JFrame {
         txtFechaAccidente = new javax.swing.JTextField();
         btnGuardar = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
-        menuOpciones = new javax.swing.JMenu();
-        menuItemSalir = new javax.swing.JMenuItem();
+        menuActividades = new javax.swing.JMenu();
+        menuCasosAsesoria = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -180,12 +180,21 @@ public class IniciarCasoAsesoria extends javax.swing.JFrame {
         btnGuardar.setText("Guardar");
         btnGuardar.setToolTipText("");
 
-        menuOpciones.setText("Opciones");
+        menuActividades.setText("Actividades");
+        menuActividades.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                menuActividadesMouseClicked(evt);
+            }
+        });
+        jMenuBar1.add(menuActividades);
 
-        menuItemSalir.setText("Salir");
-        menuOpciones.add(menuItemSalir);
-
-        jMenuBar1.add(menuOpciones);
+        menuCasosAsesoria.setText("Casos de Asesoria");
+        menuCasosAsesoria.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                menuCasosAsesoriaMouseClicked(evt);
+            }
+        });
+        jMenuBar1.add(menuCasosAsesoria);
 
         setJMenuBar(jMenuBar1);
 
@@ -215,6 +224,18 @@ public class IniciarCasoAsesoria extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void menuActividadesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuActividadesMouseClicked
+       Actividades i = new Actividades();
+       i.setVisible(true);
+       this.setVisible(false);
+    }//GEN-LAST:event_menuActividadesMouseClicked
+
+    private void menuCasosAsesoriaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuCasosAsesoriaMouseClicked
+        CasosDeAsesoria cda= new CasosDeAsesoria();
+        cda.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_menuCasosAsesoriaMouseClicked
 
     /**
      * @param args the command line arguments
@@ -252,28 +273,28 @@ public class IniciarCasoAsesoria extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnGuardar;
+    public javax.swing.JButton btnGuardar;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JLabel lblDetalleAccidente;
-    private javax.swing.JLabel lblDetalleCaso;
-    private javax.swing.JLabel lblFechaAccidente;
-    private javax.swing.JLabel lblFechaCreacion;
-    private javax.swing.JLabel lblLugarAccidente;
-    private javax.swing.JLabel lblNombreFiscalizador;
-    private javax.swing.JLabel lblResponsable;
-    private javax.swing.JLabel lblRutFiscalizador;
-    public javax.swing.JMenuItem menuItemSalir;
-    public javax.swing.JMenu menuOpciones;
-    private javax.swing.JTextArea txtAreaDetalleAccidente;
-    private javax.swing.JTextField txtFechaAccidente;
-    private javax.swing.JTextField txtFechaCreacion;
-    private javax.swing.JTextField txtLugarAccidente;
-    private javax.swing.JTextField txtNombreFiscalizador;
-    private javax.swing.JTextField txtResponsable;
-    private javax.swing.JTextField txtRutFiscalizador;
+    public javax.swing.JTextArea jTextArea1;
+    public javax.swing.JLabel lblDetalleAccidente;
+    public javax.swing.JLabel lblDetalleCaso;
+    public javax.swing.JLabel lblFechaAccidente;
+    public javax.swing.JLabel lblFechaCreacion;
+    public javax.swing.JLabel lblLugarAccidente;
+    public javax.swing.JLabel lblNombreFiscalizador;
+    public javax.swing.JLabel lblResponsable;
+    public javax.swing.JLabel lblRutFiscalizador;
+    public javax.swing.JMenu menuActividades;
+    public javax.swing.JMenu menuCasosAsesoria;
+    public javax.swing.JTextArea txtAreaDetalleAccidente;
+    public javax.swing.JTextField txtFechaAccidente;
+    public javax.swing.JTextField txtFechaCreacion;
+    public javax.swing.JTextField txtLugarAccidente;
+    public javax.swing.JTextField txtNombreFiscalizador;
+    public javax.swing.JTextField txtResponsable;
+    public javax.swing.JTextField txtRutFiscalizador;
     // End of variables declaration//GEN-END:variables
 }

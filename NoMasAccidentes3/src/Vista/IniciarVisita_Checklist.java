@@ -55,9 +55,8 @@ public class IniciarVisita_Checklist extends javax.swing.JFrame {
         jCheckBox11 = new javax.swing.JCheckBox();
         jCheckBox12 = new javax.swing.JCheckBox();
         jMenuBar1 = new javax.swing.JMenuBar();
-        menuOpciones = new javax.swing.JMenu();
-        menuItemSalir = new javax.swing.JMenuItem();
         menuActividades = new javax.swing.JMenu();
+        menuCasosAsesoria = new javax.swing.JMenu();
 
         jMenu1.setText("jMenu1");
 
@@ -88,7 +87,7 @@ public class IniciarVisita_Checklist extends javax.swing.JFrame {
                         .addComponent(jCheckBox1)
                         .addGap(18, 18, 18)
                         .addComponent(jCheckBox2)))
-                .addContainerGap(293, Short.MAX_VALUE))
+                .addContainerGap(295, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -300,20 +299,8 @@ public class IniciarVisita_Checklist extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
-
-        menuOpciones.setText("Opciones");
-
-        menuItemSalir.setText("Salir");
-        menuItemSalir.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                menuItemSalirActionPerformed(evt);
-            }
-        });
-        menuOpciones.add(menuItemSalir);
-
-        jMenuBar1.add(menuOpciones);
 
         menuActividades.setText("Actividades");
         menuActividades.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -322,6 +309,14 @@ public class IniciarVisita_Checklist extends javax.swing.JFrame {
             }
         });
         jMenuBar1.add(menuActividades);
+
+        menuCasosAsesoria.setText("Casos de Asesoria");
+        menuCasosAsesoria.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                menuCasosAsesoriaMouseClicked(evt);
+            }
+        });
+        jMenuBar1.add(menuCasosAsesoria);
 
         setJMenuBar(jMenuBar1);
 
@@ -332,7 +327,7 @@ public class IniciarVisita_Checklist extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 943, Short.MAX_VALUE)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btnGuardarChecklist)
                         .addGap(0, 0, Short.MAX_VALUE)))
@@ -341,7 +336,7 @@ public class IniciarVisita_Checklist extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 446, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnGuardarChecklist)
                 .addGap(0, 15, Short.MAX_VALUE))
@@ -351,15 +346,17 @@ public class IniciarVisita_Checklist extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void menuItemSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemSalirActionPerformed
-        System.exit(0);
-    }//GEN-LAST:event_menuItemSalirActionPerformed
-
     private void menuActividadesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuActividadesMouseClicked
-        Actividades i = new Actividades();
+       Actividades i = new Actividades();
        i.setVisible(true);
        this.setVisible(false);
     }//GEN-LAST:event_menuActividadesMouseClicked
+
+    private void menuCasosAsesoriaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuCasosAsesoriaMouseClicked
+        CasosDeAsesoria cda= new CasosDeAsesoria();
+        cda.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_menuCasosAsesoriaMouseClicked
 
     /**
      * @param args the command line arguments
@@ -427,7 +424,6 @@ public class IniciarVisita_Checklist extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     public javax.swing.JMenu menuActividades;
-    public javax.swing.JMenuItem menuItemSalir;
-    public javax.swing.JMenu menuOpciones;
+    public javax.swing.JMenu menuCasosAsesoria;
     // End of variables declaration//GEN-END:variables
 }
