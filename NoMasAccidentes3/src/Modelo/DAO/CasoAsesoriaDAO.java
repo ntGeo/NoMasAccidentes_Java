@@ -3,6 +3,7 @@ package Modelo.DAO;
 import Modelo.CasoAsesoria;
 import Modelo.Conexion;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
@@ -43,5 +44,28 @@ public class CasoAsesoriaDAO {
         } catch (Exception e) {
         }
         return datos;
+    }
+    
+    public int agregar(CasoAsesoria ca){
+        String sql= "INSERT INTO NMA6.CASO_ASESORIA(RESPONSABLE, FECHACREACION, NOMBREFISCALIZADOR, RUTFISCALIZADOR, LUGARACCIDENTE, DETALLEACCIDENTE, FECHAACCIDENTE, DETALLECASO, ESTADO)"
+                + " VALUES(?,?,?,?,?,?,?,?,?)";
+        
+        try {
+            con= conectar.getConnection();
+            ps= con.prepareStatement(sql);
+            ps.setString(1,ca.getResponsable());
+            ps.setDate(2, (Date) ca.getFechaCreacion());
+            ps.setString(3,ca.getNombreFiscalizador());
+            ps.setString(4,ca.getRutFiscalizador());
+            ps.setString(5,ca.getLugarAccidente());
+            ps.setString(6,ca.getDetalleAccidente());
+            ps.setDate(7, (Date) ca.getFechaAccidente());
+            ps.setString(8,ca.getDetalleCaso());
+            ps.setString(9,ca.getEstado());
+            ps.executeUpdate();
+        } catch (Exception e) {
+            System.out.println("Error al insertar caso de asesoria");
+        }
+        return 1;
     }
 }

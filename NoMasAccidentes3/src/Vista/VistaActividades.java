@@ -1,20 +1,20 @@
 package Vista;
 
-import Controlador.ControladorActividades;
+import Controlador.ControladorVistaActividades;
 
 
 /**
  *
  * @author Geovanni
  */
-public class Actividades extends javax.swing.JFrame {
+public class VistaActividades extends javax.swing.JFrame {
     
-//    Actividades inicio = new Actividades();
+//    VistaActividades inicio = new VistaActividades();
 
     /**
      * Creates new form Inicio
      */
-    public Actividades() {
+    public VistaActividades() {
         initComponents();
     }
 
@@ -129,11 +129,11 @@ public class Actividades extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void tablaActividadesAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_tablaActividadesAncestorAdded
-        ControladorActividades ci= new ControladorActividades(this);
+        ControladorVistaActividades ci= new ControladorVistaActividades(this);
     }//GEN-LAST:event_tablaActividadesAncestorAdded
 
     private void menuCasosAsesoriaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuCasosAsesoriaMouseClicked
-        CasosDeAsesoria cda= new CasosDeAsesoria();
+        VistaCasosDeAsesoria cda= new VistaCasosDeAsesoria();
         cda.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_menuCasosAsesoriaMouseClicked
@@ -155,26 +155,32 @@ public class Actividades extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Actividades.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VistaActividades.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Actividades.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VistaActividades.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Actividades.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VistaActividades.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Actividades.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VistaActividades.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
 //        java.awt.EventQueue.invokeLater(new Runnable() {
 //            public void run() {
-//                new Actividades().setVisible(true);
+//                new VistaActividades().setVisible(true);
 //            }
 //        });
 
-        Actividades i = new Actividades();
-        ControladorActividades ca = new ControladorActividades(i);
+        VistaActividades i = new VistaActividades();
+        ControladorVistaActividades ca = new ControladorVistaActividades(i);
         i.setVisible(true);
     }
 

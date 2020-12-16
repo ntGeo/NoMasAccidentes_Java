@@ -2,8 +2,8 @@ package Controlador;
 
 import Modelo.DAO.CasoAsesoriaDAO;
 import Modelo.CasoAsesoria;
-import Vista.Actividades;
-import Vista.CasosDeAsesoria;
+import Vista.VistaActividades;
+import Vista.VistaCasosDeAsesoria;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
@@ -14,14 +14,14 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author Geovanni
  */
-public class ControladorCasosASesoria implements ActionListener{
+public class ControladorVistaCasosDeAsesoria implements ActionListener{
     CasoAsesoriaDAO caDAO= new CasoAsesoriaDAO();
     CasoAsesoria ca= new CasoAsesoria();
-    CasosDeAsesoria mCA= new CasosDeAsesoria();
+    VistaCasosDeAsesoria mCA= new VistaCasosDeAsesoria();
     DefaultTableModel modelo= new DefaultTableModel();
     
     
-    public ControladorCasosASesoria(CasosDeAsesoria i){
+    public ControladorVistaCasosDeAsesoria(VistaCasosDeAsesoria i){
         this.mCA=i;
         listarCasosDeAsesoria(mCA.tablaCasosAsesoria);
     }
@@ -31,6 +31,7 @@ public class ControladorCasosASesoria implements ActionListener{
         
     }
     
+    //Lista casos de Asesoria
     private void listarCasosDeAsesoria(JTable tabla){
         modelo= (DefaultTableModel) tabla.getModel();
         tabla.setModel(modelo);

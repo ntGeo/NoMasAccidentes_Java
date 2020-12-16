@@ -2,8 +2,8 @@
 
 import Modelo.DAO.UsuarioDAO;
 import Modelo.Usuario;
-import Vista.Actividades;
-import Vista.Login;
+import Vista.VistaActividades;
+import Vista.VistaLogin;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
@@ -12,14 +12,14 @@ import javax.swing.JOptionPane;
  *
  * @author Geovanni
  */
-public class ControladorLogin implements ActionListener{
+public class ControladorVistaLogin implements ActionListener{
     
     Usuario usuario = new Usuario();
     UsuarioDAO usuariodao = new UsuarioDAO();
-    Login login = new Login();
+    VistaLogin login = new VistaLogin();
     
     
-    public ControladorLogin(Login log){
+    public ControladorVistaLogin(VistaLogin log){
     this.login= log;
     this.login.btnIngresar.addActionListener(this);
 }
@@ -33,8 +33,8 @@ public class ControladorLogin implements ActionListener{
     }
     
 //    public int validarIngreso(){
-//        String usuario = Login.txtUsuario.getText();
-//        String clave = String.valueOf(Login.txtContrasena.getPassword());
+//        String usuario = VistaLogin.txtUsuario.getText();
+//        String clave = String.valueOf(VistaLogin.txtContrasena.getPassword());
 //        
 //        int resultado =0;
 //        String sql="SELECT * FROM usuario WHERE usuario='"+usuario+"' AND clave=sha1('"+clave+"')";
@@ -50,7 +50,7 @@ public class ControladorLogin implements ActionListener{
         
         if (r==0) {
             JOptionPane.showMessageDialog(login, "Bienvenido");
-            Actividades i = new Actividades();
+            VistaActividades i = new VistaActividades();
             i.setVisible(true);
             this.login.setVisible(false);
         }else{

@@ -5,16 +5,18 @@
  */
 package Vista;
 
+import Controlador.ControladorVistaFormularioNuevoCasoAsesoria;
+
 /**
  *
  * @author Geovanni
  */
-public class IniciarCasoAsesoria extends javax.swing.JFrame {
+public class VistaFormularioNuevoCasoAsesoria extends javax.swing.JFrame {
 
     /**
      * Creates new form IniciarCasoAsesoria
      */
-    public IniciarCasoAsesoria() {
+    public VistaFormularioNuevoCasoAsesoria() {
         initComponents();
     }
 
@@ -41,7 +43,7 @@ public class IniciarCasoAsesoria extends javax.swing.JFrame {
         txtAreaDetalleAccidente = new javax.swing.JTextArea();
         lblDetalleCaso = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        txtAreaDetalleCaso = new javax.swing.JTextArea();
         txtNombreFiscalizador = new javax.swing.JTextField();
         txtRutFiscalizador = new javax.swing.JTextField();
         txtLugarAccidente = new javax.swing.JTextField();
@@ -82,10 +84,10 @@ public class IniciarCasoAsesoria extends javax.swing.JFrame {
 
         lblDetalleCaso.setText("Detalle de Caso");
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jTextArea1.setPreferredSize(new java.awt.Dimension(164, 100));
-        jScrollPane2.setViewportView(jTextArea1);
+        txtAreaDetalleCaso.setColumns(20);
+        txtAreaDetalleCaso.setRows(5);
+        txtAreaDetalleCaso.setPreferredSize(new java.awt.Dimension(164, 100));
+        jScrollPane2.setViewportView(txtAreaDetalleCaso);
 
         txtNombreFiscalizador.setMinimumSize(new java.awt.Dimension(200, 22));
         txtNombreFiscalizador.setPreferredSize(new java.awt.Dimension(200, 22));
@@ -179,6 +181,11 @@ public class IniciarCasoAsesoria extends javax.swing.JFrame {
 
         btnGuardar.setText("Guardar");
         btnGuardar.setToolTipText("");
+        btnGuardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGuardarActionPerformed(evt);
+            }
+        });
 
         menuActividades.setText("Actividades");
         menuActividades.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -226,16 +233,20 @@ public class IniciarCasoAsesoria extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void menuActividadesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuActividadesMouseClicked
-       Actividades i = new Actividades();
+       VistaActividades i = new VistaActividades();
        i.setVisible(true);
        this.setVisible(false);
     }//GEN-LAST:event_menuActividadesMouseClicked
 
     private void menuCasosAsesoriaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuCasosAsesoriaMouseClicked
-        CasosDeAsesoria cda= new CasosDeAsesoria();
+        VistaCasosDeAsesoria cda= new VistaCasosDeAsesoria();
         cda.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_menuCasosAsesoriaMouseClicked
+
+    private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
+        ControladorVistaFormularioNuevoCasoAsesoria cnca = new ControladorVistaFormularioNuevoCasoAsesoria(this);
+    }//GEN-LAST:event_btnGuardarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -254,22 +265,28 @@ public class IniciarCasoAsesoria extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(IniciarCasoAsesoria.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VistaFormularioNuevoCasoAsesoria.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(IniciarCasoAsesoria.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VistaFormularioNuevoCasoAsesoria.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(IniciarCasoAsesoria.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VistaFormularioNuevoCasoAsesoria.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(IniciarCasoAsesoria.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VistaFormularioNuevoCasoAsesoria.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new IniciarCasoAsesoria().setVisible(true);
-            }
-        });
+//        java.awt.EventQueue.invokeLater(new Runnable() {
+//            public void run() {
+//                new VistaFormularioNuevoCasoAsesoria().setVisible(true);
+//            }
+//        });
+        VistaFormularioNuevoCasoAsesoria nca = new VistaFormularioNuevoCasoAsesoria();
+        ControladorVistaFormularioNuevoCasoAsesoria cnca = new ControladorVistaFormularioNuevoCasoAsesoria(nca);
+        nca.setVisible(true);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -278,7 +295,6 @@ public class IniciarCasoAsesoria extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    public javax.swing.JTextArea jTextArea1;
     public javax.swing.JLabel lblDetalleAccidente;
     public javax.swing.JLabel lblDetalleCaso;
     public javax.swing.JLabel lblFechaAccidente;
@@ -290,6 +306,7 @@ public class IniciarCasoAsesoria extends javax.swing.JFrame {
     public javax.swing.JMenu menuActividades;
     public javax.swing.JMenu menuCasosAsesoria;
     public javax.swing.JTextArea txtAreaDetalleAccidente;
+    public javax.swing.JTextArea txtAreaDetalleCaso;
     public javax.swing.JTextField txtFechaAccidente;
     public javax.swing.JTextField txtFechaCreacion;
     public javax.swing.JTextField txtLugarAccidente;

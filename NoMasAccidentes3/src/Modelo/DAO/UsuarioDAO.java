@@ -1,7 +1,7 @@
 package Modelo.DAO;
 
 import Modelo.Conexion;
-import Vista.Login;
+import Vista.VistaLogin;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

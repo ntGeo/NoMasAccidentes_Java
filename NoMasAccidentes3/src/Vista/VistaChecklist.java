@@ -9,12 +9,12 @@ package Vista;
  *
  * @author Geovanni
  */
-public class IniciarVisita_Checklist extends javax.swing.JFrame {
+public class VistaChecklist extends javax.swing.JFrame {
 
     /**
      * Creates new form IniciarActividad
      */
-    public IniciarVisita_Checklist() {
+    public VistaChecklist() {
         initComponents();
     }
 
@@ -347,13 +347,13 @@ public class IniciarVisita_Checklist extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void menuActividadesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuActividadesMouseClicked
-       Actividades i = new Actividades();
+       VistaActividades i = new VistaActividades();
        i.setVisible(true);
        this.setVisible(false);
     }//GEN-LAST:event_menuActividadesMouseClicked
 
     private void menuCasosAsesoriaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuCasosAsesoriaMouseClicked
-        CasosDeAsesoria cda= new CasosDeAsesoria();
+        VistaCasosDeAsesoria cda= new VistaCasosDeAsesoria();
         cda.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_menuCasosAsesoriaMouseClicked
@@ -375,21 +375,27 @@ public class IniciarVisita_Checklist extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(IniciarVisita_Checklist.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VistaChecklist.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(IniciarVisita_Checklist.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VistaChecklist.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(IniciarVisita_Checklist.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VistaChecklist.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(IniciarVisita_Checklist.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VistaChecklist.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new IniciarVisita_Checklist().setVisible(true);
+                new VistaChecklist().setVisible(true);
             }
         });
     }

@@ -4,9 +4,9 @@ import Modelo.Actividad;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import Modelo.DAO.ActividadDAO;
-import Vista.IniciarVisita_Checklist;
-import Vista.IniciarCasoAsesoria;
-import Vista.Actividades;
+import Vista.VistaChecklist;
+import Vista.VistaFormularioNuevoCasoAsesoria;
+import Vista.VistaActividades;
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
@@ -16,14 +16,14 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author Geovanni
  */
-public class ControladorActividades implements ActionListener{
+public class ControladorVistaActividades implements ActionListener{
     ActividadDAO aDao = new ActividadDAO();
     Actividad a = new Actividad();
-    Actividades inicio = new Actividades();
+    VistaActividades inicio = new VistaActividades();
     DefaultTableModel modelo= new DefaultTableModel();
     
 
-    public ControladorActividades(Actividades i){
+    public ControladorVistaActividades(VistaActividades i){
         this.inicio=i;
         listarActividades(inicio.tablaActividades);
         this.inicio.btnIniciarActividad.addActionListener(this);
@@ -74,7 +74,7 @@ public class ControladorActividades implements ActionListener{
             int yn=JOptionPane.showConfirmDialog(inicio, "Ha seleccionado una Actividad de Tipo Visita, ¿Desea comenzar checklist?","Inicio de Actividad",JOptionPane.YES_NO_OPTION);
             
                 if (yn== JOptionPane.YES_OPTION) {
-                IniciarVisita_Checklist ia= new IniciarVisita_Checklist();
+                VistaChecklist ia= new VistaChecklist();
                 ia.setVisible(true);
                 this.inicio.setVisible(false);      
                 }else{
@@ -86,7 +86,7 @@ public class ControladorActividades implements ActionListener{
             int yn2=JOptionPane.showConfirmDialog(inicio, "Ha seleccionado una Actividad de Tipo Asesoria, ¿Desea crear Caso de Asesoria?","Inicio de Actividad",JOptionPane.YES_NO_OPTION);
             
                 if (yn2== JOptionPane.YES_OPTION) {
-                    IniciarCasoAsesoria ica= new IniciarCasoAsesoria();
+                    VistaFormularioNuevoCasoAsesoria ica= new VistaFormularioNuevoCasoAsesoria();
                     ica.setVisible(true);
                     this.inicio.setVisible(false);
                 }else{

@@ -5,18 +5,18 @@
  */
 package Vista;
 
-import Controlador.ControladorCasosASesoria;
+import Controlador.ControladorVistaCasosDeAsesoria;
 
 /**
  *
  * @author Geovanni
  */
-public class CasosDeAsesoria extends javax.swing.JFrame {
+public class VistaCasosDeAsesoria extends javax.swing.JFrame {
 
     /**
      * Creates new form CasosDeAsesoria
      */
-    public CasosDeAsesoria() {
+    public VistaCasosDeAsesoria() {
         initComponents();
     }
 
@@ -106,11 +106,11 @@ public class CasosDeAsesoria extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void tablaCasosAsesoriaAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_tablaCasosAsesoriaAncestorAdded
-        ControladorCasosASesoria cca = new ControladorCasosASesoria(this);
+        ControladorVistaCasosDeAsesoria cca = new ControladorVistaCasosDeAsesoria(this);
     }//GEN-LAST:event_tablaCasosAsesoriaAncestorAdded
 
     private void menuActividadesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuActividadesMouseClicked
-       Actividades i = new Actividades();
+       VistaActividades i = new VistaActividades();
        i.setVisible(true);
        this.setVisible(false);
     }//GEN-LAST:event_menuActividadesMouseClicked
@@ -132,25 +132,26 @@ public class CasosDeAsesoria extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(CasosDeAsesoria.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VistaCasosDeAsesoria.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(CasosDeAsesoria.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VistaCasosDeAsesoria.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(CasosDeAsesoria.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VistaCasosDeAsesoria.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(CasosDeAsesoria.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VistaCasosDeAsesoria.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
 //        java.awt.EventQueue.invokeLater(new Runnable() {
 //            public void run() {
-//                new CasosDeAsesoria().setVisible(true);
+//                new VistaCasosDeAsesoria().setVisible(true);
 //            }
 //        });
 
-        CasosDeAsesoria ca= new CasosDeAsesoria();
-        ControladorCasosASesoria cca= new ControladorCasosASesoria(ca);
+        VistaCasosDeAsesoria ca= new VistaCasosDeAsesoria();
+        ControladorVistaCasosDeAsesoria cca= new ControladorVistaCasosDeAsesoria(ca);
         ca.setVisible(true);
     }
 
