@@ -25,3 +25,6 @@ hs_err_pid*
 /NoMasAccidentes/build/
 /NoMasAccidentes3/nbproject/private/
 /NoMasAccidentes3/build/
+
+# ignorar claseconexion
+NoMasAccidentes3/src/Modelo/Conexion.java
