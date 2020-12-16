@@ -27,11 +27,158 @@ public class IniciarCasoAsesoria extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        lblResponsable = new javax.swing.JLabel();
+        txtResponsable = new javax.swing.JTextField();
+        lblFechaCreacion = new javax.swing.JLabel();
+        txtFechaCreacion = new javax.swing.JTextField();
+        lblNombreFiscalizador = new javax.swing.JLabel();
+        lblRutFiscalizador = new javax.swing.JLabel();
+        lblLugarAccidente = new javax.swing.JLabel();
+        lblFechaAccidente = new javax.swing.JLabel();
+        lblDetalleAccidente = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        txtAreaDetalleAccidente = new javax.swing.JTextArea();
+        lblDetalleCaso = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
+        txtNombreFiscalizador = new javax.swing.JTextField();
+        txtRutFiscalizador = new javax.swing.JTextField();
+        txtLugarAccidente = new javax.swing.JTextField();
+        txtFechaAccidente = new javax.swing.JTextField();
+        btnGuardar = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         menuOpciones = new javax.swing.JMenu();
         menuItemSalir = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Caso de Asesoria"));
+
+        lblResponsable.setText("Responsable");
+
+        txtResponsable.setMinimumSize(new java.awt.Dimension(100, 22));
+        txtResponsable.setPreferredSize(new java.awt.Dimension(200, 22));
+
+        lblFechaCreacion.setText("Fecha de Creacion");
+
+        txtFechaCreacion.setToolTipText("");
+        txtFechaCreacion.setPreferredSize(new java.awt.Dimension(100, 22));
+
+        lblNombreFiscalizador.setText("Nombre Fiscalizador");
+
+        lblRutFiscalizador.setText("Rut Fiscalizador");
+
+        lblLugarAccidente.setText("Lugar de Accidente");
+
+        lblFechaAccidente.setText("Fecha de Accidente");
+
+        lblDetalleAccidente.setText("Detalle Accidente");
+
+        txtAreaDetalleAccidente.setColumns(20);
+        txtAreaDetalleAccidente.setRows(5);
+        txtAreaDetalleAccidente.setPreferredSize(new java.awt.Dimension(164, 100));
+        jScrollPane1.setViewportView(txtAreaDetalleAccidente);
+
+        lblDetalleCaso.setText("Detalle de Caso");
+
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jTextArea1.setPreferredSize(new java.awt.Dimension(164, 100));
+        jScrollPane2.setViewportView(jTextArea1);
+
+        txtNombreFiscalizador.setMinimumSize(new java.awt.Dimension(200, 22));
+        txtNombreFiscalizador.setPreferredSize(new java.awt.Dimension(200, 22));
+
+        txtRutFiscalizador.setPreferredSize(new java.awt.Dimension(200, 22));
+
+        txtLugarAccidente.setToolTipText("");
+        txtLugarAccidente.setPreferredSize(new java.awt.Dimension(200, 22));
+
+        txtFechaAccidente.setPreferredSize(new java.awt.Dimension(200, 22));
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblNombreFiscalizador)
+                            .addComponent(lblRutFiscalizador)
+                            .addComponent(lblLugarAccidente)
+                            .addComponent(lblFechaAccidente))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtFechaAccidente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtLugarAccidente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtRutFiscalizador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtNombreFiscalizador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblFechaCreacion)
+                            .addComponent(lblResponsable))
+                        .addGap(28, 28, 28)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtResponsable, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtFechaCreacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(67, 67, 67)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 547, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblDetalleAccidente)
+                            .addComponent(lblDetalleCaso))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(21, 21, 21)
+                                .addComponent(lblResponsable))
+                            .addComponent(txtResponsable, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(21, 21, 21)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblFechaCreacion)
+                            .addComponent(txtFechaCreacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblNombreFiscalizador)
+                            .addComponent(txtNombreFiscalizador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblRutFiscalizador)
+                            .addComponent(txtRutFiscalizador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(11, 11, 11)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblLugarAccidente)
+                            .addComponent(txtLugarAccidente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblFechaAccidente)
+                            .addComponent(txtFechaAccidente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(15, 15, 15)
+                        .addComponent(lblDetalleAccidente)
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(46, 46, 46)
+                        .addComponent(lblDetalleCaso)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(23, Short.MAX_VALUE))
+        );
+
+        btnGuardar.setText("Guardar");
+        btnGuardar.setToolTipText("");
 
         menuOpciones.setText("Opciones");
 
@@ -46,11 +193,23 @@ public class IniciarCasoAsesoria extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1000, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btnGuardar)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 474, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
+                .addComponent(btnGuardar)
+                .addGap(22, 22, 22))
         );
 
         pack();
@@ -93,8 +252,28 @@ public class IniciarCasoAsesoria extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnGuardar;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JLabel lblDetalleAccidente;
+    private javax.swing.JLabel lblDetalleCaso;
+    private javax.swing.JLabel lblFechaAccidente;
+    private javax.swing.JLabel lblFechaCreacion;
+    private javax.swing.JLabel lblLugarAccidente;
+    private javax.swing.JLabel lblNombreFiscalizador;
+    private javax.swing.JLabel lblResponsable;
+    private javax.swing.JLabel lblRutFiscalizador;
     public javax.swing.JMenuItem menuItemSalir;
     public javax.swing.JMenu menuOpciones;
+    private javax.swing.JTextArea txtAreaDetalleAccidente;
+    private javax.swing.JTextField txtFechaAccidente;
+    private javax.swing.JTextField txtFechaCreacion;
+    private javax.swing.JTextField txtLugarAccidente;
+    private javax.swing.JTextField txtNombreFiscalizador;
+    private javax.swing.JTextField txtResponsable;
+    private javax.swing.JTextField txtRutFiscalizador;
     // End of variables declaration//GEN-END:variables
 }
