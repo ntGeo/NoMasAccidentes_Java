@@ -5,7 +5,7 @@
  */
 package Vista;
 
-import Controlador.ControladorInicio;
+import Controlador.ControladorActividades;
 import Controlador.ControladorLogin;
 /**
  *

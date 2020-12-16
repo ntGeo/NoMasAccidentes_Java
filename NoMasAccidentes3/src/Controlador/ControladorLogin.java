@@ -2,7 +2,7 @@
 
 import Modelo.DAO.UsuarioDAO;
 import Modelo.Usuario;
-import Vista.Inicio;
+import Vista.Actividades;
 import Vista.Login;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -50,7 +50,7 @@ public class ControladorLogin implements ActionListener{
         
         if (r==0) {
             JOptionPane.showMessageDialog(login, "Bienvenido");
-            Inicio i = new Inicio();
+            Actividades i = new Actividades();
             i.setVisible(true);
             this.login.setVisible(false);
         }else{

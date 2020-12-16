@@ -356,7 +356,7 @@ public class IniciarVisita_Checklist extends javax.swing.JFrame {
     }//GEN-LAST:event_menuItemSalirActionPerformed
 
     private void menuActividadesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuActividadesMouseClicked
-        Inicio i = new Inicio();
+        Actividades i = new Actividades();
        i.setVisible(true);
        this.setVisible(false);
     }//GEN-LAST:event_menuActividadesMouseClicked

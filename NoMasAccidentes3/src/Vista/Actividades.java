@@ -1,20 +1,20 @@
 package Vista;
 
-import Controlador.ControladorInicio;
+import Controlador.ControladorActividades;
 
 
 /**
  *
  * @author Geovanni
  */
-public class Inicio extends javax.swing.JFrame {
+public class Actividades extends javax.swing.JFrame {
     
-//    Inicio inicio = new Inicio();
+//    Actividades inicio = new Actividades();
 
     /**
      * Creates new form Inicio
      */
-    public Inicio() {
+    public Actividades() {
         initComponents();
     }
 
@@ -138,7 +138,7 @@ public class Inicio extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItemSalirActionPerformed
 
     private void tablaActividadesAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_tablaActividadesAncestorAdded
-        ControladorInicio ci= new ControladorInicio(this);
+        ControladorActividades ci= new ControladorActividades(this);
     }//GEN-LAST:event_tablaActividadesAncestorAdded
 
     /**
@@ -158,25 +158,26 @@ public class Inicio extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Inicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Actividades.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Inicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Actividades.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Inicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Actividades.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Inicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Actividades.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
 //        java.awt.EventQueue.invokeLater(new Runnable() {
 //            public void run() {
-//                new Inicio().setVisible(true);
+//                new Actividades().setVisible(true);
 //            }
 //        });
 
-        Inicio i = new Inicio();
-        ControladorInicio ca = new ControladorInicio(i);
+        Actividades i = new Actividades();
+        ControladorActividades ca = new ControladorActividades(i);
         i.setVisible(true);
     }
 

@@ -5,7 +5,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import Modelo.DAO.ActividadDAO;
 import Vista.IniciarVisita_Checklist;
-import Vista.Inicio;
+import Vista.IniciarCasoAsesoria;
+import Vista.Actividades;
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
@@ -15,14 +16,14 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author Geovanni
  */
-public class ControladorInicio implements ActionListener{
+public class ControladorActividades implements ActionListener{
     ActividadDAO aDao = new ActividadDAO();
     Actividad a = new Actividad();
-    Inicio inicio = new Inicio();
+    Actividades inicio = new Actividades();
     DefaultTableModel modelo= new DefaultTableModel();
     
 
-    public ControladorInicio(Inicio i){
+    public ControladorActividades(Actividades i){
         this.inicio=i;
         listarActividades(inicio.tablaActividades);
         this.inicio.btnIniciarActividad.addActionListener(this);
@@ -35,6 +36,7 @@ public class ControladorInicio implements ActionListener{
         }
     }
 
+    // Metodo que lista todas las actividades
     private void listarActividades(JTable tabla) {
         modelo= (DefaultTableModel) tabla.getModel();
         tabla.setModel(modelo);
@@ -56,6 +58,7 @@ public class ControladorInicio implements ActionListener{
         inicio.tablaActividades.setModel(modelo);
     }
     
+    //Metodo que controla los inicios de actividades
     private void iniciarActividad(){
         int fila = inicio.tablaActividades.getSelectedRow();
         String tipo = null;
@@ -65,7 +68,9 @@ public class ControladorInicio implements ActionListener{
         else{
             tipo= inicio.tablaActividades.getValueAt(fila, 1).toString();
             System.out.println(tipo);
-            }if ("Visita".equals(tipo)) {
+            //Valido si actividad es Visita
+            }if ("Visita".equals(tipo)) 
+            {
             int yn=JOptionPane.showConfirmDialog(inicio, "Ha seleccionado una Actividad de Tipo Visita, ¿Desea comenzar checklist?","Inicio de Actividad",JOptionPane.YES_NO_OPTION);
             
                 if (yn== JOptionPane.YES_OPTION) {
@@ -74,13 +79,22 @@ public class ControladorInicio implements ActionListener{
                 this.inicio.setVisible(false);      
                 }else{
                 this.inicio.setVisible(true);
+                }
+            //Validacion si actividad es Asesoria    
+            }if ("Asesoria".equals(tipo)) 
+            {
+            int yn2=JOptionPane.showConfirmDialog(inicio, "Ha seleccionado una Actividad de Tipo Asesoria, ¿Desea crear Caso de Asesoria?","Inicio de Actividad",JOptionPane.YES_NO_OPTION);
+            
+                if (yn2== JOptionPane.YES_OPTION) {
+                    IniciarCasoAsesoria ica= new IniciarCasoAsesoria();
+                    ica.setVisible(true);
+                    this.inicio.setVisible(false);
+                }else{
+                this.inicio.setVisible(true);    
+                }
             }
-        }
-            
-        }  
-//            JOptionPane.showMessageDialog(inicio,"Se iniciará actividad");
-            
         
     }
+}
     
 
