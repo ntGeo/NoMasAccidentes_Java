@@ -9,12 +9,12 @@ import java.util.Date;
 public class CasoAsesoria {
     int id;
     String responsable, nombreFiscalizador, rutFiscalizador, lugarAccidente, detalleAccidente, detalleCaso, estado;
-    Date fechaCreacion,fechaAccidente; 
+    String fechaCreacion,fechaAccidente; 
 
     public CasoAsesoria() {
     }
 
-    public CasoAsesoria(int id, String responsable, String nombreFiscalizador, String rutFiscalizador, String lugarAccidente, String detalleAccidente, String estado, Date fechaAccidente, String detalleCaso, Date fechaCreacion) {
+    public CasoAsesoria(int id, String responsable, String nombreFiscalizador, String rutFiscalizador, String lugarAccidente, String detalleAccidente, String estado, String fechaAccidente, String detalleCaso, String fechaCreacion) {
         this.id = id;
         this.responsable = responsable;
         this.nombreFiscalizador = nombreFiscalizador;
@@ -75,11 +75,11 @@ public class CasoAsesoria {
         this.detalleAccidente = detalleAccidente;
     }
 
-    public Date getFechaAccidente() {
+    public String getFechaAccidente() {
         return fechaAccidente;
     }
 
-    public void setFechaAccidente(Date fechaAccidente) {
+    public void setFechaAccidente(String fechaAccidente) {
         this.fechaAccidente = fechaAccidente;
     }
 
@@ -91,11 +91,11 @@ public class CasoAsesoria {
         this.detalleCaso = detalleCaso;
     }
 
-    public Date getFechaCreacion() {
+    public String getFechaCreacion() {
         return fechaCreacion;
     }
 
-    public void setFechaCreacion(Date fechaCreacion) {
+    public void setFechaCreacion(String fechaCreacion) {
         this.fechaCreacion = fechaCreacion;
     }
 

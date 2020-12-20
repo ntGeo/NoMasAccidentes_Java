@@ -38,7 +38,7 @@ public class ControladorVistaCasosDeAsesoria implements ActionListener{
         List<CasoAsesoria>lista= caDAO.listar();
         Object[]object=new Object[8];
         for (int i = 0; i < lista.size(); i++) {
-            object[0]=lista.get(i).getId();
+//            object[0]=lista.get(i).getId();
             object[1]=lista.get(i).getResponsable();
             object[2]=lista.get(i).getFechaCreacion();
             object[3]=lista.get(i).getNombreFiscalizador();

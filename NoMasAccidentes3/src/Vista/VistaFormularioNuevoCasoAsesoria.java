@@ -6,6 +6,7 @@
 package Vista;
 
 import Controlador.ControladorVistaFormularioNuevoCasoAsesoria;
+import java.sql.Date;
 
 /**
  *
@@ -33,7 +34,6 @@ public class VistaFormularioNuevoCasoAsesoria extends javax.swing.JFrame {
         lblResponsable = new javax.swing.JLabel();
         txtResponsable = new javax.swing.JTextField();
         lblFechaCreacion = new javax.swing.JLabel();
-        txtFechaCreacion = new javax.swing.JTextField();
         lblNombreFiscalizador = new javax.swing.JLabel();
         lblRutFiscalizador = new javax.swing.JLabel();
         lblLugarAccidente = new javax.swing.JLabel();
@@ -47,7 +47,8 @@ public class VistaFormularioNuevoCasoAsesoria extends javax.swing.JFrame {
         txtNombreFiscalizador = new javax.swing.JTextField();
         txtRutFiscalizador = new javax.swing.JTextField();
         txtLugarAccidente = new javax.swing.JTextField();
-        txtFechaAccidente = new javax.swing.JTextField();
+        jDateChooser1 = new com.toedter.calendar.JDateChooser();
+        jDateChooser2 = new com.toedter.calendar.JDateChooser();
         btnGuardar = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         menuActividades = new javax.swing.JMenu();
@@ -63,9 +64,6 @@ public class VistaFormularioNuevoCasoAsesoria extends javax.swing.JFrame {
         txtResponsable.setPreferredSize(new java.awt.Dimension(200, 22));
 
         lblFechaCreacion.setText("Fecha de Creacion");
-
-        txtFechaCreacion.setToolTipText("");
-        txtFechaCreacion.setPreferredSize(new java.awt.Dimension(100, 22));
 
         lblNombreFiscalizador.setText("Nombre Fiscalizador");
 
@@ -97,8 +95,6 @@ public class VistaFormularioNuevoCasoAsesoria extends javax.swing.JFrame {
         txtLugarAccidente.setToolTipText("");
         txtLugarAccidente.setPreferredSize(new java.awt.Dimension(200, 22));
 
-        txtFechaAccidente.setPreferredSize(new java.awt.Dimension(200, 22));
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -114,10 +110,10 @@ public class VistaFormularioNuevoCasoAsesoria extends javax.swing.JFrame {
                             .addComponent(lblFechaAccidente))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtFechaAccidente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtLugarAccidente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtRutFiscalizador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtNombreFiscalizador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(txtNombreFiscalizador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jDateChooser2, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblFechaCreacion)
@@ -125,7 +121,7 @@ public class VistaFormularioNuevoCasoAsesoria extends javax.swing.JFrame {
                         .addGap(28, 28, 28)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtResponsable, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtFechaCreacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(67, 67, 67)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 547, Short.MAX_VALUE)
@@ -147,10 +143,10 @@ public class VistaFormularioNuevoCasoAsesoria extends javax.swing.JFrame {
                                 .addGap(21, 21, 21)
                                 .addComponent(lblResponsable))
                             .addComponent(txtResponsable, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(21, 21, 21)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGap(20, 20, 20)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(lblFechaCreacion)
-                            .addComponent(txtFechaCreacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lblNombreFiscalizador)
@@ -164,9 +160,9 @@ public class VistaFormularioNuevoCasoAsesoria extends javax.swing.JFrame {
                             .addComponent(lblLugarAccidente)
                             .addComponent(txtLugarAccidente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(lblFechaAccidente)
-                            .addComponent(txtFechaAccidente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jDateChooser2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(15, 15, 15)
                         .addComponent(lblDetalleAccidente)
@@ -287,10 +283,13 @@ public class VistaFormularioNuevoCasoAsesoria extends javax.swing.JFrame {
         VistaFormularioNuevoCasoAsesoria nca = new VistaFormularioNuevoCasoAsesoria();
         ControladorVistaFormularioNuevoCasoAsesoria cnca = new ControladorVistaFormularioNuevoCasoAsesoria(nca);
         nca.setVisible(true);
+
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btnGuardar;
+    public com.toedter.calendar.JDateChooser jDateChooser1;
+    public com.toedter.calendar.JDateChooser jDateChooser2;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
@@ -307,8 +306,6 @@ public class VistaFormularioNuevoCasoAsesoria extends javax.swing.JFrame {
     public javax.swing.JMenu menuCasosAsesoria;
     public javax.swing.JTextArea txtAreaDetalleAccidente;
     public javax.swing.JTextArea txtAreaDetalleCaso;
-    public javax.swing.JTextField txtFechaAccidente;
-    public javax.swing.JTextField txtFechaCreacion;
     public javax.swing.JTextField txtLugarAccidente;
     public javax.swing.JTextField txtNombreFiscalizador;
     public javax.swing.JTextField txtResponsable;
