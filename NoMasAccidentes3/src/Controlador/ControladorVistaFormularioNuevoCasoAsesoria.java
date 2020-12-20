@@ -2,10 +2,10 @@ package Controlador;
 
 import Modelo.CasoAsesoria;
 import Modelo.DAO.CasoAsesoriaDAO;
+import Vista.VistaCasosDeAsesoria;
 import Vista.VistaFormularioNuevoCasoAsesoria;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.sql.Date;
 import java.util.Calendar;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -65,12 +65,17 @@ public class ControladorVistaFormularioNuevoCasoAsesoria implements ActionListen
         ca.setFechaAccidente(fechaAccidente);
         ca.setDetalleCaso(detalleCaso);
         ca.setEstado(estado);
+        
         int r = caDao.agregar(ca);
         if (r==1) {
             JOptionPane.showMessageDialog(vistaFormulario, "Caso de Asesoria agregado con exito.");
         }else{
             JOptionPane.showMessageDialog(vistaFormulario, "No es posible agregar Caso de Asesoria");
         }
+        
+        VistaCasosDeAsesoria vca = new VistaCasosDeAsesoria();
+        vca.setVisible(true);
+        this.vistaFormulario.setVisible(false);
     }
     
     private void limpiarCampos(){

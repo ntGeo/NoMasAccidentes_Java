@@ -2,7 +2,7 @@ package Controlador;
 
 import Modelo.DAO.CasoAsesoriaDAO;
 import Modelo.CasoAsesoria;
-import Vista.VistaPropuestaDeMejora;
+import Vista.VistaFormularioNuevaPropuestaDeMejora;
 import Vista.VistaCasosDeAsesoria;
 import Vista.VistaChecklist;
 import Vista.VistaFormularioNuevoCasoAsesoria;
@@ -44,7 +44,7 @@ public class ControladorVistaCasosDeAsesoria implements ActionListener{
         List<CasoAsesoria>lista= caDAO.listar();
         Object[]object=new Object[8];
         for (int i = 0; i < lista.size(); i++) {
-//            object[0]=lista.get(i).getId();
+            object[0]=lista.get(i).getId();
             object[1]=lista.get(i).getResponsable();
             object[2]=lista.get(i).getFechaCreacion();
             object[3]=lista.get(i).getNombreFiscalizador();
@@ -61,24 +61,21 @@ public class ControladorVistaCasosDeAsesoria implements ActionListener{
         int fila = mCA.tablaCasosAsesoria.getSelectedRow();
         String tipo = null;
         if (fila==-1) {
-            JOptionPane.showMessageDialog(mCA,"Debe seleccionar una actividad");
+            JOptionPane.showMessageDialog(mCA,"Debe seleccionar un Caso de Asesoria");
         }
         else{
             tipo= mCA.tablaCasosAsesoria.getValueAt(fila, 7).toString();
-            System.out.println(tipo);
-            //Valido si actividad es Visita
             }if ("En proceso".equals(tipo)) 
             {
             int yn=JOptionPane.showConfirmDialog(mCA, "Ha seleccionado un Caso en Proceso, ¿Desea comenzar Propuesta de Mejora?","Inicio de Propuesta",JOptionPane.YES_NO_OPTION);
             
                 if (yn== JOptionPane.YES_OPTION) {
-                VistaPropuestaDeMejora pm= new VistaPropuestaDeMejora();
+                VistaFormularioNuevaPropuestaDeMejora pm= new VistaFormularioNuevaPropuestaDeMejora();
                 pm.setVisible(true);
                 this.mCA.setVisible(false);      
                 }else{
                 this.mCA.setVisible(true);
-                }
-            //Validacion si actividad es Asesoria    
+                }  
             }
     }
 }

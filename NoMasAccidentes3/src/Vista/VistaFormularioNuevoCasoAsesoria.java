@@ -6,7 +6,6 @@
 package Vista;
 
 import Controlador.ControladorVistaFormularioNuevoCasoAsesoria;
-import java.sql.Date;
 
 /**
  *
