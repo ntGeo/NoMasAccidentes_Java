@@ -4,8 +4,6 @@ import Modelo.DAO.CasoAsesoriaDAO;
 import Modelo.CasoAsesoria;
 import Vista.VistaFormularioNuevaPropuestaDeMejora;
 import Vista.VistaCasosDeAsesoria;
-import Vista.VistaChecklist;
-import Vista.VistaFormularioNuevoCasoAsesoria;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
@@ -28,12 +26,18 @@ public class ControladorVistaCasosDeAsesoria implements ActionListener{
         this.mCA=i;
         listarCasosDeAsesoria(mCA.tablaCasosAsesoria);
         this.mCA.btnCrearPropuesta.addActionListener(this);
+        this.mCA.btnFinalizar.addActionListener(this);
     }
     
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource()== mCA.btnCrearPropuesta) {
             crearPropuesta();
+        }
+        if (e.getSource()==mCA.btnFinalizar){
+            finalizarCaso();
+            limpiarTabla();
+            listarCasosDeAsesoria(mCA.tablaCasosAsesoria);
         }
     }
     
@@ -77,9 +81,36 @@ public class ControladorVistaCasosDeAsesoria implements ActionListener{
                 this.mCA.setVisible(true);
                 }  
             }
+            if ("Finalizado".equals(tipo)) {
+            JOptionPane.showMessageDialog(mCA,"Caso se encuentra finalizado, no es posible crear nueva propuesta");
+        }
     }
     
-//    private void finalizarCaso(){
-//        int 
-//    }
+    private void finalizarCaso(){
+        int fila = mCA.tablaCasosAsesoria.getSelectedRow();
+        String tipo= mCA.tablaCasosAsesoria.getValueAt(fila, 7).toString();
+        
+        if ("En proceso".equals(tipo)) {
+            int yn=JOptionPane.showConfirmDialog(mCA, "¿Esta seguro de finalizar Caso de Asesoria?","Finalizar",JOptionPane.YES_NO_OPTION);
+            
+            if (yn== JOptionPane.YES_OPTION) {
+                String id= mCA.tablaCasosAsesoria.getValueAt(fila, 0).toString();
+                int id2= Integer.parseInt(id);
+                ca.setId(id2);
+                
+                int r = caDAO.actualizar(id2);
+        }else{
+            this.mCA.setVisible(true);
+        }
+       }
+    }
+    
+    void limpiarTabla(){
+        for (int i = 0; i < mCA.tablaCasosAsesoria.getRowCount(); i++) {
+            modelo.removeRow(i);
+            i= i-1;
+        }
+    }
+    
+   
 }

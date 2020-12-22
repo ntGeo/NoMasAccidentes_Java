@@ -43,7 +43,7 @@ public class ControladorVistaFormularioNuevoCasoAsesoria implements ActionListen
         anio= vistaFormulario.jDateChooser1.getCalendar().get(Calendar.YEAR);
         String fechaCreacion= dia+"/"+mes+"/"+anio;
         
-         int dia2, mes2, anio2;
+        int dia2, mes2, anio2;
         dia2= vistaFormulario.jDateChooser2.getCalendar().get(Calendar.DAY_OF_MONTH);
         mes2= vistaFormulario.jDateChooser2.getCalendar().get(Calendar.MONTH);
         anio2= vistaFormulario.jDateChooser2.getCalendar().get(Calendar.YEAR);
@@ -77,10 +77,6 @@ public class ControladorVistaFormularioNuevoCasoAsesoria implements ActionListen
             JOptionPane.showMessageDialog(vistaFormulario, "No es posible agregar Caso de Asesoria");
         }
         }
-        
-        
-        
-        
     }
     
     private void limpiarCampos(){

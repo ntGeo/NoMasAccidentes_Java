@@ -39,7 +39,7 @@ public class VistaLogin extends javax.swing.JFrame {
         setBackground(java.awt.Color.darkGray);
         setSize(new java.awt.Dimension(1000, 500));
 
-        lblUsuario.setText("Usuario");
+        lblUsuario.setText("Correo");
         lblUsuario.setToolTipText("");
 
         lblContrasena.setText("Contraseña");
