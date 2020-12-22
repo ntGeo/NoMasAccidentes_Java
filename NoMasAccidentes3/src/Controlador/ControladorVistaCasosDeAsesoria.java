@@ -78,4 +78,8 @@ public class ControladorVistaCasosDeAsesoria implements ActionListener{
                 }  
             }
     }
+    
+//    private void finalizarCaso(){
+//        int 
+//    }
 }

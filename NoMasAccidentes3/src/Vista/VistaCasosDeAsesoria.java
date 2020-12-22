@@ -33,6 +33,7 @@ public class VistaCasosDeAsesoria extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         tablaCasosAsesoria = new javax.swing.JTable();
         btnCrearPropuesta = new javax.swing.JButton();
+        btnFinalizar = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         menuActividades = new javax.swing.JMenu();
         menuCasosASesoria = new javax.swing.JMenu();
@@ -62,6 +63,8 @@ public class VistaCasosDeAsesoria extends javax.swing.JFrame {
 
         btnCrearPropuesta.setText("Crear Propuesta");
 
+        btnFinalizar.setText("Marcar Como Finalizada");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -72,6 +75,8 @@ public class VistaCasosDeAsesoria extends javax.swing.JFrame {
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 968, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(btnCrearPropuesta)
+                        .addGap(31, 31, 31)
+                        .addComponent(btnFinalizar)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -81,7 +86,9 @@ public class VistaCasosDeAsesoria extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 337, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 67, Short.MAX_VALUE)
-                .addComponent(btnCrearPropuesta)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnCrearPropuesta)
+                    .addComponent(btnFinalizar))
                 .addContainerGap())
         );
 
@@ -166,6 +173,7 @@ public class VistaCasosDeAsesoria extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btnCrearPropuesta;
+    public javax.swing.JButton btnFinalizar;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;

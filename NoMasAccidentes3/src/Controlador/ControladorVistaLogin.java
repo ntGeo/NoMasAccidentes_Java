@@ -48,8 +48,9 @@ public class ControladorVistaLogin implements ActionListener{
         String contrasena =login.txtContrasena.toString();
         int r=usuariodao.validar(nombreUsuario, contrasena);
         
-        if (r==0) {
-            JOptionPane.showMessageDialog(login, "Bienvenido");
+        if (validacionCorreo()==true && validacionContrasena()==true) {
+            if (r==0) {
+//            JOptionPane.showMessageDialog(login, "Bienvenido");
             VistaActividades i = new VistaActividades();
             i.setVisible(true);
             this.login.setVisible(false);
@@ -57,12 +58,32 @@ public class ControladorVistaLogin implements ActionListener{
             JOptionPane.showMessageDialog(login, "Error al intentar ingresar");
             limpiarCampos();
         }
-        
+      }
     }
     
   private void limpiarCampos(){
       login.txtUsuario.setText("");
       login.txtContrasena.setText("");
+  }
+  
+  private boolean validacionCorreo(){
+      if (login.txtUsuario.getText().length()> 0) {
+          return true;
+      }else{
+          JOptionPane.showMessageDialog(login, "Debe ingresar Correo de Usuario");
+          limpiarCampos();
+          return false;
+      }
+  }
+  
+  private boolean validacionContrasena(){
+      if (login.txtContrasena.getText().length()> 0) {
+          return true;
+      }else{
+          JOptionPane.showMessageDialog(login, "Debe ingresar Contrsaeña");
+          limpiarCampos();
+          return false;
+      }
   }
     
 }

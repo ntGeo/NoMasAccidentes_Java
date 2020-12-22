@@ -5,6 +5,8 @@
  */
 package Vista;
 
+import Controlador.ControladorVistaListaPropuestasDeMejora;
+
 /**
  *
  * @author Geovanni
@@ -29,13 +31,13 @@ public class VistaListaPropuestasDeMejora extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tablaPropuestas = new javax.swing.JTable();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu2 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tablaPropuestas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -43,7 +45,7 @@ public class VistaListaPropuestasDeMejora extends javax.swing.JFrame {
                 "ID", "Responsable", "Item de Mejora", "Fecha Emision"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tablaPropuestas);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -112,11 +114,16 @@ public class VistaListaPropuestasDeMejora extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new VistaListaPropuestasDeMejora().setVisible(true);
-            }
-        });
+//        java.awt.EventQueue.invokeLater(new Runnable() {
+//            public void run() {
+//                new VistaListaPropuestasDeMejora().setVisible(true);
+//            }
+//        });
+        
+        VistaListaPropuestasDeMejora vlpm = new VistaListaPropuestasDeMejora();
+        Controlador.ControladorVistaListaPropuestasDeMejora cpm = new ControladorVistaListaPropuestasDeMejora(vlpm);
+        vlpm.setVisible(true);
+        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -124,6 +131,6 @@ public class VistaListaPropuestasDeMejora extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    public javax.swing.JTable tablaPropuestas;
     // End of variables declaration//GEN-END:variables
 }

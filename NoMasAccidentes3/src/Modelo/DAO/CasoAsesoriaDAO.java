@@ -24,7 +24,7 @@ public class CasoAsesoriaDAO {
         List<CasoAsesoria>datos= new ArrayList<>();
         try {
             con=conectar.getConnection();
-            ps=con.prepareStatement("SELECT * FROM NMA6.CASO_ASESORIA");
+            ps=con.prepareStatement("SELECT * FROM CASO_ASESORIA");
             rs=ps.executeQuery();
             while (rs.next()) {
                 CasoAsesoria p = new CasoAsesoria();
@@ -48,7 +48,7 @@ public class CasoAsesoriaDAO {
     
     //Agrega nuevo Caso de Asesoria
     public int agregar(CasoAsesoria ca){
-        String sql= "INSERT INTO NMA6.CASO_ASESORIA(RESPONSABLE, FECHACREACION, NOMBREFISCALIZADOR, RUTFISCALIZADOR, LUGARACCIDENTE, DETALLEACCIDENTE, FECHAACCIDENTE, DETALLECASO, ESTADO) "
+        String sql= "INSERT INTO CASO_ASESORIA(RESPONSABLE, FECHACREACION, NOMBREFISCALIZADOR, RUTFISCALIZADOR, LUGARACCIDENTE, DETALLEACCIDENTE, FECHAACCIDENTE, DETALLECASO, ESTADO) "
                 + "VALUES (?,?,?,?,?,?,?,?,?)";
         
         try {
@@ -68,5 +68,18 @@ public class CasoAsesoriaDAO {
             System.out.println("Error al insertar caso de asesoria");
         }
         return 1;
+    }
+    
+    public int actualizar(int id){
+        String sql="UPDATE CASO_ASESORIA SET ESTADO= 'Finalizado' WHERE ID="+id;
+        
+        try {
+            con= conectar.getConnection();
+            ps= con.prepareStatement(sql);
+            ps.executeUpdate();
+        } catch (Exception e) {
+            System.out.println("Error al actualizar caso de asesoria");
+        }
+            return 1;
     }
 }
