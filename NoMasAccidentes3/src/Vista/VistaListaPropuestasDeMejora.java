@@ -29,11 +29,15 @@ public class VistaListaPropuestasDeMejora extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jMenu1 = new javax.swing.JMenu();
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tablaPropuestas = new javax.swing.JTable();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu2 = new javax.swing.JMenu();
+        menuActividades = new javax.swing.JMenu();
+        menuCasosDeAsesoria = new javax.swing.JMenu();
+
+        jMenu1.setText("jMenu1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -60,8 +64,12 @@ public class VistaListaPropuestasDeMejora extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        jMenu2.setText("jMenu2");
-        jMenuBar1.add(jMenu2);
+        menuActividades.setText("Actividades");
+        jMenuBar1.add(menuActividades);
+
+        menuCasosDeAsesoria.setText("Casos de Asesoria");
+        menuCasosDeAsesoria.setToolTipText("");
+        jMenuBar1.add(menuCasosDeAsesoria);
 
         setJMenuBar(jMenuBar1);
 
@@ -127,10 +135,12 @@ public class VistaListaPropuestasDeMejora extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    public javax.swing.JMenu menuActividades;
+    public javax.swing.JMenu menuCasosDeAsesoria;
     public javax.swing.JTable tablaPropuestas;
     // End of variables declaration//GEN-END:variables
 }

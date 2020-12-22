@@ -93,36 +93,25 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="lblNombreFiscalizador" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="lblRutFiscalizador" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="lblLugarAccidente" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="lblFechaAccidente" alignment="0" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="txtLugarAccidente" min="-2" max="-2" attributes="0"/>
-                              <Component id="txtRutFiscalizador" min="-2" max="-2" attributes="0"/>
-                              <Component id="txtNombreFiscalizador" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jDateChooser2" alignment="0" min="-2" pref="150" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="lblFechaCreacion" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="lblResponsable" alignment="0" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="txtResponsable" min="-2" max="-2" attributes="0"/>
-                              <Component id="jDateChooser1" min="-2" pref="150" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
+                      <Component id="lblNombreFiscalizador" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblRutFiscalizador" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblLugarAccidente" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblFechaAccidente" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblFechaCreacion" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblResponsable" alignment="0" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="txtResponsable" min="-2" max="-2" attributes="0"/>
+                      <Component id="jDateChooser1" min="-2" pref="150" max="-2" attributes="0"/>
+                      <Component id="txtLugarAccidente" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtRutFiscalizador" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtNombreFiscalizador" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="jDateChooser2" alignment="0" min="-2" pref="150" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="67" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jScrollPane2" pref="547" max="32767" attributes="0"/>
+                      <Component id="jScrollPane2" pref="529" max="32767" attributes="0"/>
                       <Component id="jScrollPane1" max="32767" attributes="0"/>
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
@@ -145,15 +134,17 @@
                               <Group type="102" attributes="0">
                                   <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
                                   <Component id="lblResponsable" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                                  <Component id="lblFechaCreacion" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <Component id="txtResponsable" alignment="1" min="-2" max="-2" attributes="0"/>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="txtResponsable" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                                  <Component id="jDateChooser1" min="-2" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
-                          <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="lblFechaCreacion" min="-2" max="-2" attributes="0"/>
-                              <Component id="jDateChooser1" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="lblNombreFiscalizador" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="txtNombreFiscalizador" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -193,7 +184,7 @@
       <SubComponents>
         <Component class="javax.swing.JLabel" name="lblResponsable">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Responsable"/>
+            <Property name="text" type="java.lang.String" value="Responsable(*)"/>
           </Properties>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -214,7 +205,7 @@
         </Component>
         <Component class="javax.swing.JLabel" name="lblFechaCreacion">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Fecha de Creacion"/>
+            <Property name="text" type="java.lang.String" value="Fecha de Creacion(*)"/>
           </Properties>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -222,7 +213,7 @@
         </Component>
         <Component class="javax.swing.JLabel" name="lblNombreFiscalizador">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Nombre Fiscalizador"/>
+            <Property name="text" type="java.lang.String" value="Nombre Fiscalizador(*)"/>
           </Properties>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -230,7 +221,7 @@
         </Component>
         <Component class="javax.swing.JLabel" name="lblRutFiscalizador">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Rut Fiscalizador"/>
+            <Property name="text" type="java.lang.String" value="Rut Fiscalizador(*)"/>
           </Properties>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -283,7 +274,7 @@
         </Container>
         <Component class="javax.swing.JLabel" name="lblDetalleCaso">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Detalle de Caso"/>
+            <Property name="text" type="java.lang.String" value="Detalle de Caso(*)"/>
           </Properties>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>

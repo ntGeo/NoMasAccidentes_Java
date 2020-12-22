@@ -36,6 +36,7 @@ public class ControladorVistaFormularioNuevoCasoAsesoria implements ActionListen
     
 
     private void guardar() {
+        if (validarResponsable()==true && validarNombreFiscalizador()== true && validarFechaCreacion()==true && validarRut()==true && validarDetalleCaso()==true) {
         int dia, mes, anio;
         dia= vistaFormulario.jDateChooser1.getCalendar().get(Calendar.DAY_OF_MONTH);
         mes= vistaFormulario.jDateChooser1.getCalendar().get(Calendar.MONTH);
@@ -69,13 +70,17 @@ public class ControladorVistaFormularioNuevoCasoAsesoria implements ActionListen
         int r = caDao.agregar(ca);
         if (r==1) {
             JOptionPane.showMessageDialog(vistaFormulario, "Caso de Asesoria agregado con exito.");
+            VistaCasosDeAsesoria vca = new VistaCasosDeAsesoria();
+            vca.setVisible(true);
+            this.vistaFormulario.setVisible(false);
         }else{
             JOptionPane.showMessageDialog(vistaFormulario, "No es posible agregar Caso de Asesoria");
         }
+        }
         
-        VistaCasosDeAsesoria vca = new VistaCasosDeAsesoria();
-        vca.setVisible(true);
-        this.vistaFormulario.setVisible(false);
+        
+        
+        
     }
     
     private void limpiarCampos(){
@@ -88,4 +93,55 @@ public class ControladorVistaFormularioNuevoCasoAsesoria implements ActionListen
         vistaFormulario.jDateChooser1.setCalendar(null);
         vistaFormulario.jDateChooser2.setCalendar(null);
     }
+    
+    private boolean validarResponsable(){
+        if (vistaFormulario.txtResponsable.getText().length()<1) {
+            JOptionPane.showMessageDialog(vistaFormulario, "Debe completar campo Responsable");
+            limpiarCampos();
+            return false;
+        }else{
+            return true;
+        }
+    }
+    
+    private boolean validarNombreFiscalizador(){
+        if (vistaFormulario.txtNombreFiscalizador.getText().length()<1) {
+            JOptionPane.showMessageDialog(vistaFormulario, "Debe completar campo Nombre Fiscalizador");
+            limpiarCampos();
+            return false;
+        }else{
+            return true;
+        }
+    }
+    
+    private boolean validarFechaCreacion(){
+        if (vistaFormulario.jDateChooser1.getDate()==null) {
+            JOptionPane.showMessageDialog(vistaFormulario, "Debe selecciona fecha de Creacion");
+            return false;
+        }else{
+            return true;
+        }
+    }
+    
+    private boolean validarRut() {
+        if (vistaFormulario.txtRutFiscalizador.getText().length()<1) {
+            JOptionPane.showMessageDialog(vistaFormulario, "Debe completar ingresar Rut de Fiscalizador");
+            limpiarCampos();
+            return false;
+        }else{
+            return true;
+        }
+    
+    }
+    
+    private boolean validarDetalleCaso(){
+        if (vistaFormulario.txtAreaDetalleCaso.getText().length()<1) {
+            JOptionPane.showMessageDialog(vistaFormulario, "Debe completar campo Detalle de Caso");
+            limpiarCampos();
+            return false;
+        }
+        return true;
+    }
+
+
 }

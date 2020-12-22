@@ -103,7 +103,7 @@ public class VistaActividades extends javax.swing.JFrame {
         menuActividades.setEnabled(false);
         jMenuBar1.add(menuActividades);
 
-        menuCasosAsesoria.setText("Casos de Asesorias");
+        menuCasosAsesoria.setText("Casos de Asesoria");
         menuCasosAsesoria.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 menuCasosAsesoriaMouseClicked(evt);
