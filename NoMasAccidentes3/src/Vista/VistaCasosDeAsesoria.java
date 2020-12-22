@@ -19,7 +19,7 @@ public class VistaCasosDeAsesoria extends javax.swing.JFrame {
      */
     public VistaCasosDeAsesoria() {
         initComponents();
-        setIconImage(new ImageIcon(getClass().getResource("/Imagenes/Logo_01.png")).getImage());
+        setIconImage(new ImageIcon(getClass().getResource("/Imagenes/Logo.png")).getImage());
     }
 
     /**

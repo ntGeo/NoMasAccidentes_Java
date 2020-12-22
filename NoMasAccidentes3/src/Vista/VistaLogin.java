@@ -16,7 +16,7 @@ public class VistaLogin extends javax.swing.JFrame {
     
     public VistaLogin() {
         initComponents();
-        setIconImage(new ImageIcon(getClass().getResource("/Imagenes/Logo_01.png")).getImage());
+        setIconImage(new ImageIcon(getClass().getResource("/Imagenes/Logo.png")).getImage());
     }
 
     /**

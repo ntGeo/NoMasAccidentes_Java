@@ -19,7 +19,7 @@ public class VistaListaPropuestasDeMejora extends javax.swing.JFrame {
      */
     public VistaListaPropuestasDeMejora() {
         initComponents();
-        setIconImage(new ImageIcon(getClass().getResource("/Imagenes/Logo_01.png")).getImage());
+        setIconImage(new ImageIcon(getClass().getResource("/Imagenes/Logo.png")).getImage());
     }
 
     /**

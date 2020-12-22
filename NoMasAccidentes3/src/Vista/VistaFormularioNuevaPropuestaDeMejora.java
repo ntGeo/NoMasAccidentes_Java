@@ -15,7 +15,7 @@ public class VistaFormularioNuevaPropuestaDeMejora extends javax.swing.JFrame {
      */
     public VistaFormularioNuevaPropuestaDeMejora() {
         initComponents();
-        setIconImage(new ImageIcon(getClass().getResource("/Imagenes/Logo_01.png")).getImage());
+        setIconImage(new ImageIcon(getClass().getResource("/Imagenes/Logo.png")).getImage());
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/YYYY");
         LocalDateTime now = LocalDateTime.now();
         txtFechaActual.setText(dtf.format(now));

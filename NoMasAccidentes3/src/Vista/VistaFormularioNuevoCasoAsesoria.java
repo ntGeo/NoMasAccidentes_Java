@@ -19,7 +19,7 @@ public class VistaFormularioNuevoCasoAsesoria extends javax.swing.JFrame {
      */
     public VistaFormularioNuevoCasoAsesoria() {
         initComponents();
-        setIconImage(new ImageIcon(getClass().getResource("/Imagenes/Logo_01.png")).getImage());
+        setIconImage(new ImageIcon(getClass().getResource("/Imagenes/Logo.png")).getImage());
     }
 
     /**
