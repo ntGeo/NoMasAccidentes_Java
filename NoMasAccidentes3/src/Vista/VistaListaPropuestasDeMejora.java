@@ -54,6 +54,15 @@ public class VistaListaPropuestasDeMejora extends javax.swing.JFrame {
                 "ID", "Responsable", "Item de Mejora", "Fecha Emision"
             }
         ));
+        tablaPropuestas.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
+                tablaPropuestasAncestorAdded(evt);
+            }
+            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+        });
         jScrollPane1.setViewportView(tablaPropuestas);
 
         btnImprimir.setText("Imprimir");
@@ -81,10 +90,20 @@ public class VistaListaPropuestasDeMejora extends javax.swing.JFrame {
         );
 
         menuActividades.setText("Actividades");
+        menuActividades.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                menuActividadesMouseClicked(evt);
+            }
+        });
         jMenuBar1.add(menuActividades);
 
         menuCasosDeAsesoria.setText("Casos de Asesoria");
         menuCasosDeAsesoria.setToolTipText("");
+        menuCasosDeAsesoria.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                menuCasosDeAsesoriaMouseClicked(evt);
+            }
+        });
         jMenuBar1.add(menuCasosDeAsesoria);
 
         setJMenuBar(jMenuBar1);
@@ -109,6 +128,22 @@ public class VistaListaPropuestasDeMejora extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void tablaPropuestasAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_tablaPropuestasAncestorAdded
+        ControladorVistaListaPropuestasDeMejora vpm= new ControladorVistaListaPropuestasDeMejora(this);
+    }//GEN-LAST:event_tablaPropuestasAncestorAdded
+
+    private void menuActividadesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuActividadesMouseClicked
+        VistaActividades i = new VistaActividades();
+       i.setVisible(true);
+       this.setVisible(false);
+    }//GEN-LAST:event_menuActividadesMouseClicked
+
+    private void menuCasosDeAsesoriaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuCasosDeAsesoriaMouseClicked
+        VistaCasosDeAsesoria cda= new VistaCasosDeAsesoria();
+        cda.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_menuCasosDeAsesoriaMouseClicked
 
     /**
      * @param args the command line arguments

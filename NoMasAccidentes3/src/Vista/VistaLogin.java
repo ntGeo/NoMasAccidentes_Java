@@ -36,6 +36,7 @@ public class VistaLogin extends javax.swing.JFrame {
         btnSalir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("No más Accidentes");
         setBackground(java.awt.Color.darkGray);
         setSize(new java.awt.Dimension(1000, 500));
 

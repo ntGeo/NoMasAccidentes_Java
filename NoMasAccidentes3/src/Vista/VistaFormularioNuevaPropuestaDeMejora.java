@@ -47,6 +47,7 @@ public class VistaFormularioNuevaPropuestaDeMejora extends javax.swing.JFrame {
         btnGuardar = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         menuActividades = new javax.swing.JMenu();
+        menuCasosDeAsesoria = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -141,7 +142,20 @@ public class VistaFormularioNuevaPropuestaDeMejora extends javax.swing.JFrame {
         );
 
         menuActividades.setText("Actividades");
+        menuActividades.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                menuActividadesMouseClicked(evt);
+            }
+        });
         jMenuBar1.add(menuActividades);
+
+        menuCasosDeAsesoria.setText("Casos de Asesoria");
+        menuCasosDeAsesoria.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                menuCasosDeAsesoriaMouseClicked(evt);
+            }
+        });
+        jMenuBar1.add(menuCasosDeAsesoria);
 
         setJMenuBar(jMenuBar1);
 
@@ -168,6 +182,18 @@ public class VistaFormularioNuevaPropuestaDeMejora extends javax.swing.JFrame {
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
         ControladorVistaFormularioNuevaPropuestaDeMejora cvnfpm = new ControladorVistaFormularioNuevaPropuestaDeMejora(this);
     }//GEN-LAST:event_btnGuardarActionPerformed
+
+    private void menuActividadesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuActividadesMouseClicked
+       VistaActividades i = new VistaActividades();
+       i.setVisible(true);
+       this.setVisible(false);
+    }//GEN-LAST:event_menuActividadesMouseClicked
+
+    private void menuCasosDeAsesoriaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuCasosDeAsesoriaMouseClicked
+        VistaCasosDeAsesoria cda= new VistaCasosDeAsesoria();
+        cda.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_menuCasosDeAsesoriaMouseClicked
 
     /**
      * @param args the command line arguments
@@ -223,6 +249,7 @@ public class VistaFormularioNuevaPropuestaDeMejora extends javax.swing.JFrame {
     private javax.swing.JLabel lblPropuesta;
     private javax.swing.JLabel lblResponsable;
     public javax.swing.JMenu menuActividades;
+    private javax.swing.JMenu menuCasosDeAsesoria;
     public javax.swing.JTextArea txtAreaObservaciones;
     public javax.swing.JTextArea txtAreaPropuesta;
     public javax.swing.JTextField txtFechaActual;

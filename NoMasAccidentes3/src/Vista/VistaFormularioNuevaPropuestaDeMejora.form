@@ -8,9 +8,20 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Actividades"/>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="menuActividadesMouseClicked"/>
+          </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
           </AuxValues>
+        </Menu>
+        <Menu class="javax.swing.JMenu" name="menuCasosDeAsesoria">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Casos de Asesoria"/>
+          </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="menuCasosDeAsesoriaMouseClicked"/>
+          </Events>
         </Menu>
       </SubComponents>
     </Menu>
