@@ -1,11 +1,14 @@
 package Controlador;
 
-import Modelo.Actividad;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import Modelo.DAO.PropuestaDeMejoraDAO;
 import Modelo.PropuestaDeMejora;
 import Vista.VistaListaPropuestasDeMejora;
+import com.itextpdf.text.Document;
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.pdf.PdfWriter;
+import java.io.FileOutputStream;
 import java.util.List;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
@@ -20,13 +23,16 @@ public class ControladorVistaListaPropuestasDeMejora implements ActionListener{
     public ControladorVistaListaPropuestasDeMejora(VistaListaPropuestasDeMejora v) {
         this.vistaListaPropuestaMejora= v;
         listarPropuestas(vistaListaPropuestaMejora.tablaPropuestas);
+        this.vistaListaPropuestaMejora.btnImprimir.addActionListener(this);
     }
     
   
     
     @Override
     public void actionPerformed(ActionEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        if (e.getSource()== vistaListaPropuestaMejora.btnImprimir) {
+            imprimirPdf();
+        }
     }
     
     
@@ -43,5 +49,20 @@ public class ControladorVistaListaPropuestasDeMejora implements ActionListener{
             modelo.addRow(object);
         }
         vistaListaPropuestaMejora.tablaPropuestas.setModel(modelo);
+    }
+    
+    
+    private void imprimirPdf(){
+        
+        try {
+            Document documento = new Document();
+            PdfWriter.getInstance(documento, new FileOutputStream("C:\\Users\\Geovanni\\Desktop\\Pdfs pruebas\\test.pdf"));
+            documento.open();
+            documento.add(new Paragraph("Ejemplo"));
+            documento.close();
+        } catch (Exception ex) {
+            System.out.println("No se Imprime");
+        }
+        System.out.println("PDF generado");
     }
 }
