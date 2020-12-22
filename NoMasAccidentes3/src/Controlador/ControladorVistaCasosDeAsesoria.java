@@ -88,9 +88,14 @@ public class ControladorVistaCasosDeAsesoria implements ActionListener{
     
     private void finalizarCaso(){
         int fila = mCA.tablaCasosAsesoria.getSelectedRow();
-        String tipo= mCA.tablaCasosAsesoria.getValueAt(fila, 7).toString();
+        String tipo= null;
         
-        if ("En proceso".equals(tipo)) {
+        if (fila==-1) {
+            JOptionPane.showMessageDialog(mCA,"Debe seleccionar un Caso de Asesoria");
+        }else{
+            tipo= mCA.tablaCasosAsesoria.getValueAt(fila, 7).toString();
+        }if ("En proceso".equals(tipo)) 
+        {
             int yn=JOptionPane.showConfirmDialog(mCA, "¿Esta seguro de finalizar Caso de Asesoria?","Finalizar",JOptionPane.YES_NO_OPTION);
             
             if (yn== JOptionPane.YES_OPTION) {
@@ -102,7 +107,11 @@ public class ControladorVistaCasosDeAsesoria implements ActionListener{
         }else{
             this.mCA.setVisible(true);
         }
-       }
+       }if ("Finalizado".equals(tipo)) {
+            JOptionPane.showMessageDialog(mCA,"Caso ya se encuentra finalizado");
+        }
+      
+        
     }
     
     void limpiarTabla(){
