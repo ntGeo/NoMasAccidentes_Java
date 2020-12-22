@@ -6,6 +6,7 @@
 package Vista;
 
 import Controlador.ControladorVistaListaPropuestasDeMejora;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -18,6 +19,7 @@ public class VistaListaPropuestasDeMejora extends javax.swing.JFrame {
      */
     public VistaListaPropuestasDeMejora() {
         initComponents();
+        setIconImage(new ImageIcon(getClass().getResource("/Imagenes/Logo_01.png")).getImage());
     }
 
     /**

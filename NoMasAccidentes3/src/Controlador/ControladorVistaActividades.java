@@ -62,14 +62,15 @@ public class ControladorVistaActividades implements ActionListener{
     private void iniciarActividad(){
         int fila = inicio.tablaActividades.getSelectedRow();
         String tipo = null;
+        String estado =null;
         if (fila==-1) {
             JOptionPane.showMessageDialog(inicio,"Debe seleccionar una actividad");
         }
         else{
             tipo= inicio.tablaActividades.getValueAt(fila, 1).toString();
-            System.out.println(tipo);
+            estado= inicio.tablaActividades.getValueAt(fila,9).toString();
             //Valido si actividad es Visita
-            }if ("Visita".equals(tipo)) 
+            }if ("Visita".equals(tipo)&& "En Proceso".equals(estado)) 
             {
             int yn=JOptionPane.showConfirmDialog(inicio, "Ha seleccionado una Actividad de Tipo Visita, ¿Desea comenzar checklist?","Inicio de Actividad",JOptionPane.YES_NO_OPTION);
             
@@ -80,8 +81,9 @@ public class ControladorVistaActividades implements ActionListener{
                 }else{
                 this.inicio.setVisible(true);
                 }
-            //Validacion si actividad es Asesoria    
-            }if ("Asesoria".equals(tipo)) 
+            //Validacion si actividad es Asesoria   
+                
+            }if ("Asesoria".equals(tipo)&& "En Proceso".equals(estado)) 
             {
             int yn2=JOptionPane.showConfirmDialog(inicio, "Ha seleccionado una Actividad de Tipo Asesoria, ¿Desea crear Caso de Asesoria?","Inicio de Actividad",JOptionPane.YES_NO_OPTION);
             
@@ -92,7 +94,11 @@ public class ControladorVistaActividades implements ActionListener{
                 }else{
                 this.inicio.setVisible(true);    
                 }
-            }
+            }if ("Finalizada".equals(estado)) 
+            {
+              JOptionPane.showMessageDialog(inicio,"Actividad Finalizada, no es posible iniciar");
+            
+        }
         
     }
 }

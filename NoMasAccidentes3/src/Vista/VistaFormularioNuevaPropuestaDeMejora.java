@@ -3,6 +3,7 @@ package Vista;
 import Controlador.ControladorVistaFormularioNuevaPropuestaDeMejora;
 import java.time.format.DateTimeFormatter;
 import java.time.LocalDateTime; 
+import javax.swing.ImageIcon;
 /**
  *
  * @author Geovanni
@@ -14,6 +15,7 @@ public class VistaFormularioNuevaPropuestaDeMejora extends javax.swing.JFrame {
      */
     public VistaFormularioNuevaPropuestaDeMejora() {
         initComponents();
+        setIconImage(new ImageIcon(getClass().getResource("/Imagenes/Logo_01.png")).getImage());
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/YYYY");
         LocalDateTime now = LocalDateTime.now();
         txtFechaActual.setText(dtf.format(now));

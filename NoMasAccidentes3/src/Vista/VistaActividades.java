@@ -1,6 +1,7 @@
 package Vista;
 
 import Controlador.ControladorVistaActividades;
+import javax.swing.ImageIcon;
 
 
 /**
@@ -16,6 +17,7 @@ public class VistaActividades extends javax.swing.JFrame {
      */
     public VistaActividades() {
         initComponents();
+        setIconImage(new ImageIcon(getClass().getResource("/Imagenes/Logo_01.png")).getImage());
     }
 
     /**

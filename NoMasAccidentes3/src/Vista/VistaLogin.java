@@ -6,6 +6,7 @@
 package Vista;
 
 import Controlador.ControladorVistaLogin;
+import javax.swing.ImageIcon;
 /**
  *
  * @author Geovanni
@@ -15,6 +16,7 @@ public class VistaLogin extends javax.swing.JFrame {
     
     public VistaLogin() {
         initComponents();
+        setIconImage(new ImageIcon(getClass().getResource("/Imagenes/Logo_01.png")).getImage());
     }
 
     /**

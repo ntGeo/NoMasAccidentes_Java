@@ -5,6 +5,8 @@
  */
 package Vista;
 
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author Geovanni
@@ -16,6 +18,7 @@ public class VistaChecklist extends javax.swing.JFrame {
      */
     public VistaChecklist() {
         initComponents();
+        setIconImage(new ImageIcon(getClass().getResource("/Imagenes/Logo_01.png")).getImage());
     }
 
     /**

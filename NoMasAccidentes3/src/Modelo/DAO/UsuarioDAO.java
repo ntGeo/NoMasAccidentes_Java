@@ -21,7 +21,7 @@ public class UsuarioDAO {
         int r=0;
         try {
             con= conectar.getConnection();
-            ps= con.prepareStatement("SELECT * FROM NMA6.USUARIO WHERE nombre='"+usuario+"' AND clave='"+contrasena+"'");
+            ps= con.prepareStatement("SELECT * FROM USUARIO WHERE nombre='"+usuario+"' AND clave='"+contrasena+"'");
 //            rs= ps.executeQuery();
             r=ps.executeUpdate();
             

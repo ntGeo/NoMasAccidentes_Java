@@ -6,6 +6,7 @@
 package Vista;
 
 import Controlador.ControladorVistaCasosDeAsesoria;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -18,6 +19,7 @@ public class VistaCasosDeAsesoria extends javax.swing.JFrame {
      */
     public VistaCasosDeAsesoria() {
         initComponents();
+        setIconImage(new ImageIcon(getClass().getResource("/Imagenes/Logo_01.png")).getImage());
     }
 
     /**

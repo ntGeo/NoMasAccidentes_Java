@@ -24,7 +24,7 @@ public class ActividadDAO {
         List<Actividad>datos= new ArrayList<>();
         try {
             con=conectar.getConnection();
-            ps=con.prepareStatement("SELECT * FROM NMA6.ACTIVIDAD");
+            ps=con.prepareStatement("SELECT * FROM ACTIVIDAD");
             rs=ps.executeQuery();
             while (rs.next()) {
                 Actividad p = new Actividad();
